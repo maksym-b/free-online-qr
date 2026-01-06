@@ -1763,3 +1763,7 @@ textarea.input-error {
 .field.is-invalid .field__error {
   color: #e53935;
 }
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
