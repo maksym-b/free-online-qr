@@ -1763,3 +1763,44 @@ textarea.input-error {
 .field.is-invalid .field__error {
   color: #e53935;
 }
+
+/* Consistent color picker swatch */
+.colorSwatch {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--card, #fff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.colorSwatch input[type="color"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.colorSwatch::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 8px;
+  background: currentColor;
+}
+
+.colorSwatch {
+  color: var(--swatch, #000);
+}
+
+.colorSwatch:focus-within {
+  outline: 2px solid rgba(0,0,0,.25);
+  outline-offset: 2px;
+}
