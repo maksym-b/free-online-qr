@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Free QR Code Generator</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container topbar__inner">
+
+            <div class="brand">
+                <a href="./index.html" class="brand__logo" aria-label="Go to homepage">QR</a>
+                <div>
+                    <div class="brand__name">Free QR Code Generator</div>
+                    <div class="brand__sub">Static QR codes. No expiry.</div>
+                </div>
+            </div>
+
+            <!-- Top navigation -->
+            <nav class="topnav" aria-label="Top navigation">
+                <!-- Mobile dropdown  -->
+                <details class="topnav__mobile">
+                    <summary class="topnav__toggle">Menu</summary>
+                    <div class="topnav__panel">
+                        <a class="topnav__link" href="./about.html">About</a>
+                        <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+                        <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                        <a class="topnav__link" href="./contact.html">Contact</a>
+                    </div>
+                </details>
+
+                <!-- Desktop links -->
+                <div class="topnav__desktop">
+                    <a class="topnav__link" href="./about.html">About</a>
+                    <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+                    <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                    <a class="topnav__link" href="./contact.html">Contact</a>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="menu">
+            <h1 class="h1">Contact</h1>
+            <p class="muted">Do you have a question or suggestion?
+                Please reach out via the contact form.</p>
+        </section>
+
+        <section class="contact">
+            <div class="panel contact__panel">
+                <form id="contactForm" class="form" action="https://formcarry.com/s/8GOwX8Ulppb" method="POST"
+                    enctype="multipart/form-data" autocomplete="on" novalidate>
+                    <!-- Honeypot (bots only) -->
+                    <div class="hp" aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                    </div>
+
+                    <div class="field">
+                        <label for="name">Name *</label>
+                        <input id="name" name="name" type="text" required maxlength="80" placeholder="Your name" />
+                        <div class="field__error" aria-live="polite"></div>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email (optional)</label>
+                        <input id="email" name="email" type="email" maxlength="120" placeholder="you@example.com" />
+                    </div>
+
+                    <div class="field">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" maxlength="2000" placeholder="Type your message"
+                            required></textarea>
+                        <div class="field__error" aria-live="polite"></div>
+                    </div>
+                    <!-- Consent -->
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" id="consent" name="consent" required />
+                            <span>
+                                I have read and accept the
+                                <a href="./terms.html" target="_blank" rel="noopener">Terms of Use</a>
+                                and
+                                <a href="./privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+                                *
+                            </span>
+                        </label>
+                        <div class="field__error" aria-live="polite"></div>
+                    </div>
+                    <div class="actions">
+                        <button class="btn" type="submit" id="btnSend">Send</button>
+                        <span class="hint" id="contactStatus" aria-live="polite"></span>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Buy me a coffee -->
+    <section class="coffee">
+        <div class="container coffee__inner">
+            <div class="coffee__left">
+                <span class="coffee__icon" aria-hidden="true">☕</span>
+                <span class="coffee__text">
+                    If this tool helped you, consider buying me a coffee
+                </span>
+            </div>
+
+            <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+                Buy Me a Coffee
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Pre-footer -->
+    <div class="prefooterbar">
+        <nav class="prefooter container" aria-label="Site links">
+            <a class="prefooter__link" href="./about.html">About</a>
+            <a class="prefooter__link" href="./qr-applications.html">QR applications</a>
+            <a class="prefooter__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+            <a class="prefooter__link" href="./contact.html">Contact</a>
+        </nav>
+
+    </div>
+    <!-- Footer -->
+    <footer class="footerbar" role="contentinfo">
+        <div class="container footer">
+            <div class="footer__inner">
+                <div class="footer__left muted small">
+                    © 2026 free-online-qr.com. Made with ❤️ in the Netherlands
+                </div>
+                <div class="footer__right">
+                    <a class="footer__link" href="./privacy.html">Privacy Statement</a>
+                    <a class="footer__link" href="./terms.html">Terms of Use</a>
+                    <a class="footer__link" href="./cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const form = document.getElementById("contactForm");
+            const statusEl = document.getElementById("contactStatus");
+            const btnSend = document.getElementById("btnSend");
+
+            function setStatus(msg, isError) {
+                statusEl.textContent = msg || "";
+                statusEl.classList.toggle("isError", !!isError);
+            }
+
+            function clearFieldErrors() {
+                form.querySelectorAll(".field.is-invalid").forEach(f => f.classList.remove("is-invalid"));
+                form.querySelectorAll(".field__error").forEach(e => e.textContent = "");
+            }
+
+            function showFieldError(control, message) {
+                const field = control.closest(".field");
+                if (!field) return;
+
+                field.classList.add("is-invalid");
+                const err = field.querySelector(".field__error");
+                if (err) err.textContent = message || "Required";
+            }
+
+            function scrollToControl(control) {
+                control.scrollIntoView({ behavior: "smooth", block: "center" });
+
+                setTimeout(() => {
+                    try { control.focus({ preventScroll: true }); } catch { control.focus(); }
+                }, 150);
+            }
+
+            function validateAndShowErrors() {
+                clearFieldErrors();
+
+                const controls = Array.from(form.querySelectorAll("input, textarea, select"));
+
+                let firstInvalid = null;
+
+                for (const c of controls) {
+                    if (c.id === "website") continue;
+
+                    if (!c.checkValidity()) {
+                        if (!firstInvalid) firstInvalid = c;
+
+                        if (c.validity.valueMissing) {
+                            showFieldError(c, "Required");
+                        } else if (c.validity.typeMismatch && c.type === "email") {
+                            showFieldError(c, "Please enter a valid email");
+                        } else {
+                            showFieldError(c, "Please check this field");
+                        }
+                    }
+                }
+
+                if (firstInvalid) {
+                    scrollToControl(firstInvalid);
+                    setStatus("Please complete the required fields.", true);
+                    return false;
+                }
+                return true;
+            }
+
+            form.addEventListener("input", (e) => {
+                const c = e.target;
+                if (!(c instanceof HTMLElement)) return;
+                const field = c.closest(".field");
+                if (!field) return;
+
+                if (field.classList.contains("is-invalid")) {
+                    if (c.checkValidity()) {
+                        field.classList.remove("is-invalid");
+                        const err = field.querySelector(".field__error");
+                        if (err) err.textContent = "";
+                    }
+                }
+            });
+
+            form.addEventListener("change", (e) => {
+                const c = e.target;
+                if (!(c instanceof HTMLElement)) return;
+                const field = c.closest(".field");
+                if (!field) return;
+
+                if (field.classList.contains("is-invalid") && c.checkValidity && c.checkValidity()) {
+                    field.classList.remove("is-invalid");
+                    const err = field.querySelector(".field__error");
+                    if (err) err.textContent = "";
+                }
+            });
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                setStatus("");
+
+                if ((document.getElementById("website").value || "").trim()) {
+                    setStatus("Thank you. Your message has been sent successfully.");
+                    form.reset();
+                    clearFieldErrors();
+                    return;
+                }
+
+                if (!validateAndShowErrors()) return;
+
+                btnSend.disabled = true;
+                btnSend.textContent = "Sending…";
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: "POST",
+                        body: new FormData(form),
+                        headers: { "Accept": "application/json" }
+                    });
+
+                    if (!res.ok) throw new Error("Form submission failed");
+                    window.location.href = "./submission-received.html";
+                    form.reset();
+                    clearFieldErrors();
+                } catch {
+                    setStatus("Submission temporarily unavailable. Please try later.", true);
+                } finally {
+                    btnSend.disabled = false;
+                    btnSend.textContent = "Send";
+                }
+            });
+        })();
+    </script>
+
+    <!-- Cookie consent banner -->
+    <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
+    <div class="cookiebar" id="cookiebar" hidden>
+        <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
+            <div class="cookiebar__text">
+                We use cookies for analytics to understand site usage.
+                See the <a href="./privacy.html">Privacy Statement</a> and
+                <a href="./cookies.html">Cookie Policy</a>.
+            </div>
+
+            <div class="cookiebar__actions">
+                <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
+                <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+    <script src="./cookies.js" defer></script>
+</body>
+
+</html>

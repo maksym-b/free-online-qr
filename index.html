@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free QR Code Generator</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+
+      <div class="brand">
+        <a href="./index.html" class="brand__logo" aria-label="Go to homepage">QR</a>
+        <div>
+          <div class="brand__name">Free QR Code Generator</div>
+          <div class="brand__sub">Static QR codes. No expiry.</div>
+        </div>
+      </div>
+
+      <!-- Top navigation -->
+      <nav class="topnav" aria-label="Top navigation">
+        <!-- Mobile dropdown  -->
+        <details class="topnav__mobile">
+          <summary class="topnav__toggle">Menu</summary>
+          <div class="topnav__panel">
+            <a class="topnav__link" href="./about.html">About</a>
+            <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+            <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+            <a class="topnav__link" href="./contact.html">Contact</a>
+          </div>
+        </details>
+
+        <!-- Desktop links -->
+        <div class="topnav__desktop">
+          <a class="topnav__link" href="./about.html">About</a>
+          <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+          <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+          <a class="topnav__link" href="./contact.html">Contact</a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+  <main class="container">
+    <!-- MENU  -->
+    <section class="menu">
+      <h1 class="h1">Select a category</h1>
+      <p class="muted">Not sure? Check <a href="./qr-applications.html">QR applications guide</a></p>
+
+      <div class="grid" id="typeGrid" aria-label="QR types">
+      </div>
+    </section>
+
+    <!-- GENERATOR -->
+    <section id="generator" class="generator">
+      <div class="panel">
+        <div class="panel__header">
+          <div>
+            <h2 class="h2" id="activeTypeTitle">Website</h2>
+            <p class="muted" id="activeTypeDesc">Link to any website URL</p>
+          </div>
+          <a href="./static-vs-dynamic-qr.html" class="badge badge--link">
+            Static QR
+          </a>
+        </div>
+
+        <form id="qrForm" class="form" autocomplete="off">
+          <div id="typeFields">
+            <!-- Website URL  -->
+            <div class="field" id="websiteField">
+              <label for="websiteUrl">Website URL *</label>
+
+              <div class="urlRow">
+                <input id="websiteUrl" name="websiteUrl" type="url" placeholder="E.g. https://www.mywebsite.com/"
+                  class="step-form-control url-field" value="" maxlength="2048" data-reload-qr-code="" input_validate=""
+                  onchange="window.LoadPreview && window.LoadPreview()" required="required" />
+              </div>
+
+              <div id="websiteError" class="error" role="alert" aria-live="polite"></div>
+              <div class="hint">
+                You can paste <strong>example.com</strong> or <strong>www.example.com</strong> — we’ll enforce
+                <strong>https://</strong>.
+              </div>
+            </div>
+
+            <div id="dynamicFields"></div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label>QR color</label>
+              <div class="colorRow">
+                <input id="colorPicker" type="color" value="#000000" />
+                <input id="colorHex" type="text" value="#000000" inputmode="text" spellcheck="false" />
+              </div>
+              <div class="hint">Darker colors scan best.</div>
+            </div>
+
+            <div class="field">
+              <label>Background color</label>
+              <div class="colorRow">
+                <input id="bgColorPicker" type="color" value="#FFFFFF" />
+                <input id="bgColorHex" type="text" value="#FFFFFF" inputmode="text" spellcheck="false" />
+              </div>
+              <div class="hint">Lighter backgrounds scan best.</div>
+            </div>
+          </div>
+
+          <div class="field" id="captionField">
+            <label for="captionText">Text</label>
+            <input id="captionText" type="text" maxlength="80" placeholder="E.g. Scan me" />
+            <div class="hint">Optional text shown under QR.</div>
+          </div>
+
+          <div class="row" id="captionStyleRow">
+            <div class="field">
+              <label for="captionColor">Text color</label>
+              <div class="colorRow">
+                <input id="captionColorPicker" type="color" value="#000000" />
+                <input id="captionColor" type="text" value="#000000" spellcheck="false" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="captionFont">Font</label>
+              <select id="captionFont">
+                <option value="sans" selected>Sans</option>
+                <option value="serif">Serif</option>
+                <option value="mono">Mono</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field" id="captionBgField" hidden>
+            <label for="captionBgColor">Text background color</label>
+            <div class="colorRow">
+              <input id="captionBgPicker" type="color" value="#FFFFFF" />
+              <input id="captionBgColor" type="text" value="#FFFFFF" spellcheck="false" />
+            </div>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="btn btn--ghost" id="btnReset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="preview">
+        <div class="preview__card">
+          <div class="preview__header">
+            <div>
+              <h2 class="h2">Preview</h2>
+            </div>
+          </div>
+
+          <div class="qrWrap">
+            <div id="qrMount" class="qrMount" aria-label="QR code preview"></div>
+          </div>
+
+          <div class="downloads">
+            <h2 class="h2">Download</h2>
+            <div class="downloadRow">
+              <button class="btn btn--small" id="dlPng">PNG</button>
+              <button class="btn btn--small" id="dlJpg">JPG</button>
+              <button class="btn btn--small" id="dlSvg">SVG</button>
+              <button class="btn btn--small" id="dlPdf">PDF</button>
+            </div>
+            <div class="hint">PNG exports are transparent. Other formats include the background color.</div>
+
+            <div class="field downloadsSize">
+              <label>File width</label>
+              <input id="size" type="range" min="200" max="2000" value="2000" />
+              <div class="hint"><span id="sizeLabel">320</span> px</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+
+  <script src="./bundle.js"></script>
+
+  <!-- Buy me a coffee -->
+  <section class="coffee">
+    <div class="container coffee__inner">
+      <div class="coffee__left">
+        <span class="coffee__icon" aria-hidden="true">☕</span>
+        <span class="coffee__text">
+          If this tool helped you, consider buying me a coffee
+        </span>
+      </div>
+
+      <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+        Buy Me a Coffee
+      </a>
+    </div>
+  </section>
+
+  <!-- Pre-footer -->
+  <div class="prefooterbar">
+    <nav class="prefooter container" aria-label="Site links">
+      <a class="prefooter__link" href="./about.html">About</a>
+      <a class="prefooter__link" href="./qr-applications.html">QR applications</a>
+      <a class="prefooter__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+      <a class="prefooter__link" href="./contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Footer bar -->
+  <footer class="footerbar" role="contentinfo">
+    <div class="container footer">
+      <div class="footer__inner">
+        <div class="footer__left muted small">
+          © 2026 free-online-qr.com. Made with ❤️ in the Netherlands
+        </div>
+
+        <div class="footer__right">
+          <a class="footer__link" href="./privacy.html">Privacy Statement</a>
+          <a class="footer__link" href="./terms.html">Terms of Use</a>
+          <a class="footer__link" href="./cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie consent banner -->
+  <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
+  <div class="cookiebar" id="cookiebar" hidden>
+    <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
+      <div class="cookiebar__text">
+        We use cookies for analytics to understand site usage.
+        See the <a href="./privacy.html">Privacy Statement</a> and
+        <a href="./cookies.html">Cookie Policy</a>.
+      </div>
+
+      <div class="cookiebar__actions">
+        <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
+        <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
+  <script src="./cookies.js" defer></script>
+</body>
+
+</html>

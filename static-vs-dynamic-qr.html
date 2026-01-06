@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static vs Dynamic QR Codes - Free QR Code Generator</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container topbar__inner">
+
+            <div class="brand">
+                <a href="./index.html" class="brand__logo" aria-label="Go to homepage">QR</a>
+                <div>
+                    <div class="brand__name">Free QR Code Generator</div>
+                    <div class="brand__sub">Static QR codes. No expiry.</div>
+                </div>
+            </div>
+
+            <!-- Top navigation -->
+            <nav class="topnav" aria-label="Top navigation">
+                <!-- Mobile dropdown (no JS) -->
+                <details class="topnav__mobile">
+                    <summary class="topnav__toggle">Menu</summary>
+                    <div class="topnav__panel">
+                        <a class="topnav__link" href="./about.html">About</a>
+                        <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+                        <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                        <a class="topnav__link" href="./contact.html">Contact</a>
+                    </div>
+                </details>
+
+                <!-- Desktop links -->
+                <div class="topnav__desktop">
+                    <a class="topnav__link" href="./about.html">About</a>
+                    <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+                    <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                    <a class="topnav__link" href="./contact.html">Contact</a>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="menu">
+            <h1 class="h1">Static vs Dynamic QR Codes</h1>
+            <p class="muted">A simple guide to help you choose the right type for your use case.</p>
+        </section>
+
+        <section class="legal">
+
+            <h2 class="h2">Using this website</h2>
+            <p>
+                This website generates static QR codes. They run in your browser and do not expire.
+                If you need a dynamic QR code, you can use a dedicated dynamic QR provider or set up your own redirect
+                link.
+            </p>
+
+            <h2 class="h2">What is a static QR code?</h2>
+            <p>
+                A static QR code contains the final information inside the code itself. For example, if you create a QR
+                code
+                for https://example.com, that exact link is encoded in the QR code.
+            </p>
+
+            <p>
+                Once printed or shared, a static QR code cannot be changed. If you need to update the link or content,
+                you must create a new QR code and replace the old one.
+            </p>
+
+            <h2 class="h2">What is a dynamic QR code?</h2>
+            <p>
+                A dynamic QR code usually stores a short redirect link instead of the final destination.
+                When someone scans it, they first open the redirect, and then they are sent to the final destination.
+            </p>
+
+            <p>
+                Because the destination is managed on a server, you can change where the QR code points later without
+                changing the QR image. Many dynamic QR services also provide scan analytics.
+            </p>
+
+            <!-- Illustration placeholder -->
+            <div class="mediaPlaceholder" aria-label="Illustration placeholder" role="img"></div>
+
+            <section class="qrCompare">
+                <h2 class="h2">Main differences</h2>
+
+                <div class="qrCompareTable" role="table" aria-label="Static vs Dynamic QR comparison">
+                    <div class="qrCompareTable__head" role="row">
+                        <div class="qrCompareTable__cell qrCompareTable__feature" role="columnheader">Feature</div>
+                        <div class="qrCompareTable__cell qrCompareTable__colhead" role="columnheader">Static QR</div>
+                        <div class="qrCompareTable__cell qrCompareTable__colhead" role="columnheader">Dynamic QR</div>
+                    </div>
+
+                    <div class="qrCompareTable__row" role="row">
+                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Can you change the
+                            destination later?</div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--no"
+                                aria-label="No">✕</span></div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
+                                aria-label="Yes">✓</span></div>
+                    </div>
+
+                    <div class="qrCompareTable__row" role="row">
+                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Built-in scan analytics
+                        </div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--no"
+                                aria-label="No">✕</span></div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
+                                aria-label="Yes">✓</span></div>
+                    </div>
+
+                    <div class="qrCompareTable__row" role="row">
+                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Works without a
+                            third-party service</div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
+                                aria-label="Yes">✓</span></div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--no"
+                                aria-label="No">✕</span></div>
+                    </div>
+
+                    <div class="qrCompareTable__row" role="row">
+                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Usually free long term
+                        </div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
+                                aria-label="Yes">✓</span></div>
+                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--maybe"
+                                aria-label="Sometimes">–</span></div>
+                    </div>
+
+                    <div class="qrCompareTable__note">
+                        Dynamic QR codes often require a subscription for editing and analytics.
+                    </div>
+                </div>
+            </section>
+
+            <h2 class="h2">Which one should you choose?</h2>
+            <p>
+                Choose a static QR code if you want something simple, free, and reliable. Static QR codes are a good fit
+                for
+                permanent content such as a homepage, product information page, menu PDF, or Wi-Fi details that will not
+                change.
+            </p>
+
+            <p>
+                Choose a dynamic QR code if you plan to change the destination later or if you want scan analytics.
+                Dynamic QR codes are often used in marketing campaigns, printed ads, product packaging, and event
+                materials.
+            </p>
+
+        </section>
+    </main>
+
+    <!-- Buy me a coffee -->
+    <section class="coffee">
+        <div class="container coffee__inner">
+            <div class="coffee__left">
+                <span class="coffee__icon" aria-hidden="true">☕</span>
+                <span class="coffee__text">If this guide helped you, consider buying me a coffee</span>
+            </div>
+            <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+                Buy Me a Coffee
+            </a>
+        </div>
+    </section>
+
+    <!-- Pre-footer (full width) -->
+    <div class="prefooterbar">
+        <nav class="prefooter container" aria-label="Site links">
+            <a class="prefooter__link" href="./about.html">About</a>
+            <a class="prefooter__link" href="./qr-applications.html">QR applications</a>
+            <a class="prefooter__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+            <a class="prefooter__link" href="./contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footerbar" role="contentinfo" id="footerbar">
+        <div class="container footer">
+            <div class="footer__inner">
+                <div class="footer__left muted small">
+                © 2026 free-online-qr.com. Made with ❤️ in the Netherlands
+                </div>
+                <div class="footer__right">
+                    <a class="footer__link" href="./privacy.html">Privacy Statement</a>
+                    <a class="footer__link" href="./terms.html">Terms of Use</a>
+                    <a class="footer__link" href="./cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie consent banner -->
+    <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
+    <div class="cookiebar" id="cookiebar" hidden>
+        <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
+            <div class="cookiebar__text">
+                We use cookies for analytics to understand site usage.
+                See the <a href="./privacy.html">Privacy Statement</a> and
+                <a href="./cookies.html">Cookie Policy</a>.
+            </div>
+
+            <div class="cookiebar__actions">
+                <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
+                <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
+            </div>
+        </div>
+    </div>
+    <script src="./cookies.js" defer></script>
+</body>
+
+</html>

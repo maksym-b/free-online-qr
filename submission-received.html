@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submission received - Free QR Code Generator</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+
+      <div class="brand">
+        <a href="./index.html" class="brand__logo" aria-label="Go to homepage">QR</a>
+        <div>
+          <div class="brand__name">Free QR Code Generator</div>
+          <div class="brand__sub">Static QR codes. No expiry.</div>
+        </div>
+      </div>
+
+      <!-- Top navigation -->
+      <nav class="topnav" aria-label="Top navigation">
+        <!-- Mobile dropdown  -->
+        <details class="topnav__mobile">
+          <summary class="topnav__toggle">Menu</summary>
+          <div class="topnav__panel">
+            <a class="topnav__link" href="./about.html">About</a>
+            <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+            <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+            <a class="topnav__link" href="./contact.html">Contact</a>
+          </div>
+        </details>
+
+        <!-- Desktop links -->
+        <div class="topnav__desktop">
+          <a class="topnav__link" href="./about.html">About</a>
+          <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+          <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+          <a class="topnav__link" href="./contact.html">Contact</a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="menu">
+      <h1 class="h1">Submission received</h1>
+      <p class="muted">Thank you. Your message has been sent successfully.</p>
+    </section>
+
+    <section class="thankyouWrap">
+      <div class="panel thankyouCard" role="status" aria-live="polite">
+        <div class="sparkles" aria-hidden="true">
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+        </div>
+
+        <div class="successCenter">
+          <div class="successMark" aria-hidden="true">
+            <svg class="checkSvg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="checkPath" d="M14 27.2L22.2 35.4L38.5 18.8" stroke="rgba(34, 197, 94, 0.95)"
+                stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Buy me a coffee -->
+  <section class="coffee">
+    <div class="container coffee__inner">
+      <div class="coffee__left">
+        <span class="coffee__icon" aria-hidden="true">☕</span>
+        <span class="coffee__text">
+          If this tool helped you, consider buying me a coffee
+        </span>
+      </div>
+
+      <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+        Buy Me a Coffee
+      </a>
+    </div>
+  </section>
+
+  <!-- Pre-footer -->
+  <div class="prefooterbar">
+    <nav class="prefooter container" aria-label="Site links">
+      <a class="prefooter__link" href="./about.html">About</a>
+      <a class="prefooter__link" href="./qr-applications.html">QR applications</a>
+      <a class="prefooter__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+      <a class="prefooter__link" href="./contact.html">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footerbar" role="contentinfo">
+    <div class="container footer">
+      <div class="footer__inner">
+        <div class="footer__left muted small">
+          © 2026 free-online-qr.com. Made with ❤️ in the Netherlands
+        </div>
+        <div class="footer__right">
+          <a class="footer__link" href="./privacy.html">Privacy Statement</a>
+          <a class="footer__link" href="./terms.html">Terms of Use</a>
+          <a class="footer__link" href="./cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie consent banner -->
+  <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
+  <div class="cookiebar" id="cookiebar" hidden>
+    <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
+      <div class="cookiebar__text">
+        We use cookies for analytics to understand site usage.
+        See the <a href="./privacy.html">Privacy Statement</a> and
+        <a href="./cookies.html">Cookie Policy</a>.
+      </div>
+
+      <div class="cookiebar__actions">
+        <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
+        <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./cookies.js" defer></script>
+</body>
+
+</html>

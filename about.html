@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Free QR Code Generator</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container topbar__inner">
+
+            <div class="brand">
+                <a href="./index.html" class="brand__logo" aria-label="Go to homepage">QR</a>
+                <div>
+                    <div class="brand__name">Free QR Code Generator</div>
+                    <div class="brand__sub">Static QR codes. No expiry.</div>
+                </div>
+            </div>
+
+            <!-- Top navigation -->
+            <nav class="topnav" aria-label="Top navigation">
+                <!-- Mobile dropdown -->
+                <details class="topnav__mobile">
+                    <summary class="topnav__toggle">Menu</summary>
+                    <div class="topnav__panel">
+                        <a class="topnav__link" href="./about.html">About</a>
+                        <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+                        <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                        <a class="topnav__link" href="./contact.html">Contact</a>
+                    </div>
+                </details>
+
+                <!-- Desktop links -->
+                <div class="topnav__desktop">
+                    <a class="topnav__link" href="./about.html">About</a>
+                    <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+                    <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                    <a class="topnav__link" href="./contact.html">Contact</a>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="menu">
+            <h1 class="h1">About</h1>
+            <p class="muted">A simple tool built to help people share information quickly and reliably.</p>
+        </section>
+
+        <section class="about">
+            <div class="about__content">
+                <p>
+                    This website was created to support the online community with practical and useful services.
+                    The philosophy behind this project is freedom of creativity, good user experience and helping
+                    others.
+                </p>
+
+                <p>
+                    QR codes are a small tool, but they can unlock many ideas, from sharing a link to building a
+                    business card, helping customers find a location, or connecting people to the right information in
+                    seconds.
+                </p>
+
+                <p>
+                    Everything runs client-side in your browser. Your QR content is generated locally on your device.
+                    If you have a question or suggestion,
+                    please reach out via the <a href="./contact.html">Contact</a> page.
+                </p>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2 class="h2 faq__title">Frequently asked questions</h2>
+
+            <div class="faqList" id="faqList">
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">What is a QR code?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            A QR code is a two-dimensional barcode that can be read by smartphone cameras and QR scanner
+                            apps.
+                            It stores information in a square pattern, which can represent text, a website link, contact
+                            details, and more.
+                            QR codes are popular because they are fast to scan and can hold more information than
+                            classic barcodes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">How do QR codes work?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            A QR code stores data as a grid of dark and light squares. When you scan it, the camera
+                            reads the pattern
+                            and converts it back into data, such as a URL or a contact card. QR codes also include error
+                            correction,
+                            which helps scanners recover the data even if the code is slightly dirty or partially
+                            covered.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">What is the maximum data capacity of a QR code?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            Capacity depends on the QR version and the type of content. As a rough guide, QR codes can
+                            store thousands of
+                            characters. Numeric content can store more than text. In practice, shorter payloads scan
+                            faster and more reliably,
+                            so it is usually best to keep the encoded content concise.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">Will QR codes replace traditional barcodes?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            Many industries are moving toward 2D codes because they can hold more information and can be
+                            used both by
+                            checkout systems and by consumers. Standards like GS1 Digital Link also make it possible for
+                            one code to
+                            serve multiple purposes, such as product identification plus a link to extra details.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">Have QR codes become obsolete?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            Not at all. QR codes continue to expand into new use cases, including payments, menus,
+                            access control,
+                            marketing, and quick information sharing. They are simple, widely supported, and still
+                            evolving with
+                            modern standards.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">What is the recommended minimum size for a printed QR code?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            A safe minimum is about 3 cm by 3 cm, which is around 1 inch by 1 inch. If you are unsure,
+                            printing larger is
+                            usually better than printing smaller, especially if scanning happens from a distance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">What is the best file type for printing?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            Vector format such as SVG can scale to any size without becoming blurry.
+                            This is ideal for print because it stays sharp on everything from small labels to large
+                            posters.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">Can QR codes still work if they are partially damaged?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            Often yes. QR codes include error correction, which can recover data even when part of the
+                            pattern is missing.
+                            How much damage is recoverable depends on how much of the code is affected and how strong
+                            the error correction is.
+                            If you use QR codes for print, it helps to keep a clean quiet zone around the code and use
+                            strong contrast.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">Is it possible to have a white QR code?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            Yes, as long as there is enough contrast between the code and the background. Many scanners
+                            rely on strong contrast,
+                            so you should test across multiple phones and lighting conditions. For reliable scanning,
+                            dark code on a light
+                            background is still the safest choice.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">What is the difference between static and dynamic QR codes?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            A static QR code stores the final information directly in the code and cannot be changed
+                            after creation. It is free, simple, and reliable long term.
+                            A dynamic QR code uses a redirect, allowing the destination to be updated later and often
+                            providing scan analytics, but it depends on a third-party service.
+                            For more details, see the <a href="./static-vs-dynamic-qr.html">Static vs Dynamic QR
+                                codes</a> page.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">Does this website store personal data?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            No. This website generates QR codes entirely in your browser. The data you enter is not
+                            stored, uploaded, or processed on a server. QR codes are generated client-side only, which
+                            means your information stays on your device.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faqItem">
+                    <button class="accordion" type="button" aria-expanded="false">
+                        <span class="accordion__text">Is any data sold or shared with third parties?</span>
+                    </button>
+                    <div class="accordionA" hidden>
+                        <p>
+                            No personal data is sold or shared with third parties. This website does not collect
+                            personal information from QR code content. If analytics are enabled, they are used only to
+                            understand general site usage and improve the service, not to identify individuals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Buy me a coffee -->
+    <section class="coffee">
+        <div class="container coffee__inner">
+            <div class="coffee__left">
+                <span class="coffee__icon" aria-hidden="true">☕</span>
+                <span class="coffee__text">If this tool helped you, consider buying me a coffee</span>
+            </div>
+            <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+                Buy Me a Coffee
+            </a>
+        </div>
+    </section>
+
+    <!-- Pre-footer -->
+    <div class="prefooterbar">
+        <nav class="prefooter container" aria-label="Site links">
+            <a class="prefooter__link" href="./about.html">About</a>
+            <a class="prefooter__link" href="./qr-applications.html">QR applications</a>
+            <a class="prefooter__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+            <a class="prefooter__link" href="./contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footerbar" role="contentinfo">
+        <div class="container footer">
+            <div class="footer__inner">
+                <div class="footer__left muted small">
+                © 2026 free-online-qr.com. Made with ❤️ in the Netherlands
+                </div>
+                <div class="footer__right">
+                    <a class="footer__link" href="./privacy.html">Privacy Statement</a>
+                    <a class="footer__link" href="./terms.html">Terms of Use</a>
+                    <a class="footer__link" href="./cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie consent banner -->
+    <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
+    <div class="cookiebar" id="cookiebar" hidden>
+        <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
+            <div class="cookiebar__text">
+                We use cookies for analytics to understand site usage.
+                See the <a href="./privacy.html">Privacy Statement</a> and
+                <a href="./cookies.html">Cookie Policy</a>.
+            </div>
+
+            <div class="cookiebar__actions">
+                <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
+                <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
+            </div>
+        </div>
+    </div>
+    <script src="./cookies.js" defer></script>
+
+    <script>
+        (function () {
+            const list = document.getElementById("faqList");
+            if (!list) return;
+
+            function toggle(item) {
+                const btn = item.querySelector(".accordion");
+                const panel = item.querySelector(".accordionA");
+                const isOpen = btn.getAttribute("aria-expanded") === "true";
+
+                btn.setAttribute("aria-expanded", String(!isOpen));
+                panel.hidden = isOpen;
+            }
+
+            list.addEventListener("click", (e) => {
+                const btn = e.target.closest(".accordion");
+                if (!btn) return;
+                const item = btn.closest(".faqItem");
+                if (!item) return;
+                toggle(item);
+            });
+
+            list.addEventListener("keydown", (e) => {
+                const btn = e.target.closest(".accordion");
+                if (!btn) return;
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    const item = btn.closest(".faqItem");
+                    if (!item) return;
+                    toggle(item);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>
