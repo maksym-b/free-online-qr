@@ -93,12 +93,10 @@ function clampHexWithDefault(v, fallback) {
 function getCaptionSettings() {
   const text = document.getElementById("captionText")?.value?.trim() || "";
 
-  // Text color: picker + text field
   const colorPickerEl = document.getElementById("captionColorPicker");
   const colorHexEl = document.getElementById("captionColor");
   const colorRaw = (colorHexEl?.value || colorPickerEl?.value || "#000000").trim();
 
-  // Background: picker + text field
   const bgPickerEl = document.getElementById("captionBgPicker");
   const bgHexEl = document.getElementById("captionBgColor");
   const bgRaw = (bgHexEl?.value || bgPickerEl?.value || "#FFFFFF").trim();
@@ -166,7 +164,6 @@ function captionLayoutFor(sizePx) {
   const padY = Math.max(4, Math.round(CAPTION_PREVIEW_PAD_Y * scale));
   const padX = Math.max(CAPTION_EXPORT_MIN_PAD_X, Math.round(CAPTION_PREVIEW_PAD_X * scale));
 
-  // Baseline tweak: tends to match HTML better across common fonts
   const baseline = Math.round(fontSize * 0.82);
 
   return { fontSize, lineHeight, padY, padX, baseline };
@@ -248,13 +245,13 @@ const QR_TYPES = [
     icon: "🛜",
     fields: () => ([
       { id: "ssid", label: "SSID", type: "text", placeholder: "Network name", required: true },
-      { id: "security", label: "Security", type: "select", options: ["WPA", "WEP", "nopass"], required: true },
+      { id: "security", label: "Security", type: "select", options: ["", "WEP", "nopass"], required: true },
       { id: "password", label: "Password", type: "text", placeholder: "Wi-Fi password", required: false },
     ]),
     buildPayload: (v) => {
       const ssid = (v.ssid || "").replaceAll("\\", "\\\\").replaceAll(";", "\\;");
       const pwd = (v.password || "").replaceAll("\\", "\\\\").replaceAll(";", "\\;");
-      const sec = v.security || "WPA";
+      const sec = v.security || "";
       return `WIFI:T:${sec};S:${ssid};P:${pwd};`;
     },
   },
@@ -265,8 +262,8 @@ const QR_TYPES = [
     icon: "📩",
     fields: () => ([
       { id: "to", label: "Email recipient", type: "text", placeholder: "person@example.com", required: true },
-      { id: "subject", label: "Subject", type: "text", placeholder: "Subject (optional)", required: false },
-      { id: "body", label: "Body text", type: "textarea", placeholder: "Write your email (optional)…", required: false },
+      { id: "subject", label: "Subject", type: "text", placeholder: "Subject", required: false },
+      { id: "body", label: "Body text", type: "textarea", placeholder: "Email text…", required: false },
     ]),
     buildPayload: (v) => {
       const to = String(v.to || "").trim();
@@ -502,7 +499,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
     }
 
     let lastState = {
-      data: "https://www.example.com",
+      data: "",
       hex: (colorHex?.value || "#000000"),
     };
 
@@ -552,7 +549,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       width: PREVIEW_PX,
       height: PREVIEW_PX,
       type: "svg",
-      data: "https://www.example.com",
+      data: "",
       margin: 0,
       qrOptions: { errorCorrectionLevel: "M" },
       dotsOptions: { type: "square", color: (colorHex?.value || "#000000") },
@@ -884,26 +881,26 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
 
       // defaults
       const preset = {
-        website: { url: "https://www.example.com" },
-        text: { text: "Hello! This is a static QR code." },
-        wifi: { ssid: "MyWiFi", security: "WPA", password: "password123" },
-        email: { to: "hello@example.com", subject: "Hello", body: "Hi! I found your QR code." },
-        phone: { number: "+31 6 000 0000" },
-        whatsapp: { number: "+31 6 000 0000" },
-        location: { search: "Dam Square Amsterdam", lat: "52.3731", lon: "4.8922" },
+        website: { url: "" },
+        text: { text: "" },
+        wifi: { ssid: "", security: "", password: "" },
+        email: { to: "", subject: "", body: "" },
+        phone: { number: "" },
+        whatsapp: { number: "" },
+        location: { search: "", lat: "", lon: "" },
         vcard: {
-          name: "Jane Doe",
-          org: "Company Inc.",
-          dept: "Sales",
-          title: "Marketing",
-          phone: "+31 6 000 0000",
-          email: "jane@example.com",
-          url: "https://www.example.com",
-          street: "123 Main St",
-          city: "Amsterdam",
-          region: "Noord-Holland",
-          postal: "1011AB",
-          country: "Netherlands",
+          name: "",
+          org: "",
+          dept: "",
+          title: "",
+          phone: "",
+          email: "",
+          url: "",
+          street: "",
+          city: "",
+          region: "",
+          postal: "",
+          country: "",
         },
       };
 
