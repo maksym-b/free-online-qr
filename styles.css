@@ -1763,8 +1763,3 @@ textarea.input-error {
 .field.is-invalid .field__error {
   color: #e53935;
 }
-
-.field.is-invalid input[type="checkbox"] {
-  outline: 2px solid #e53935;
-  outline-offset: 2px;
-}
