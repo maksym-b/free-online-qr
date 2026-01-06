@@ -4,31 +4,31 @@
 
 const COUNTRY_OPTIONS = [
   "",
-  "Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica","Antigua and Barbuda",
-  "Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados",
-  "Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil",
-  "British Indian Ocean Territory","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia",
-  "Cameroon","Canada","Cape Verde","Cayman Islands","Central African Republic","Chad","Chile","China","Christmas Island",
-  "Cocos Islands","Colombia","Comoros","Cook Islands","Costa Rica","Croatia","Cuba","Curacao","Cyprus","Czech Republic",
-  "Democratic Republic of the Congo","Denmark","Djibouti","Dominica","Dominican Republic","East Timor","Ecuador","Egypt",
-  "El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland",
-  "France","French Polynesia","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada",
-  "Guam","Guatemala","Guernsey","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland",
-  "India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Ivory Coast","Jamaica","Japan","Jersey",
-  "Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia",
-  "Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali",
-  "Malta","Marshall Islands","Mauritania","Mauritius","Mayotte","Mexico","Micronesia","Moldova","Monaco","Mongolia",
-  "Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands","Netherlands Antilles",
-  "New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","Niue","North Korea","Northern Mariana Islands","Norway",
-  "Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Pitcairn","Poland",
-  "Portugal","Puerto Rico","Qatar","Republic of the Congo","Reunion","Romania","Russia","Rwanda","Saint Barthelemy",
-  "Saint Helena","Saint Kitts and Nevis","Saint Lucia","Saint Martin","Saint Pierre and Miquelon","Saint Vincent and the Grenadines",
-  "Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore",
-  "Sint Maarten","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain",
-  "Sri Lanka","Sudan","Suriname","Svalbard and Jan Mayen","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan",
-  "Tanzania","Thailand","Togo","Tokelau","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Turks and Caicos Islands",
-  "Tuvalu","U.S. Virgin Islands","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan",
-  "Vanuatu","Vatican","Venezuela","Vietnam","Wallis and Futuna","Western Sahara","Yemen","Zambia","Zimbabwe",
+  "Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda",
+  "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+  "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil",
+  "British Indian Ocean Territory", "British Virgin Islands", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia",
+  "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island",
+  "Cocos Islands", "Colombia", "Comoros", "Cook Islands", "Costa Rica", "Croatia", "Cuba", "Curacao", "Cyprus", "Czech Republic",
+  "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt",
+  "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands", "Faroe Islands", "Fiji", "Finland",
+  "France", "French Polynesia", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada",
+  "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hong Kong", "Hungary", "Iceland",
+  "India", "Indonesia", "Iran", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jersey",
+  "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kosovo", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia",
+  "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali",
+  "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia",
+  "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles",
+  "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "North Korea", "Northern Mariana Islands", "Norway",
+  "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland",
+  "Portugal", "Puerto Rico", "Qatar", "Republic of the Congo", "Reunion", "Romania", "Russia", "Rwanda", "Saint Barthelemy",
+  "Saint Helena", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines",
+  "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore",
+  "Sint Maarten", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain",
+  "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan",
+  "Tanzania", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands",
+  "Tuvalu", "U.S. Virgin Islands", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan",
+  "Vanuatu", "Vatican", "Venezuela", "Vietnam", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe",
 ];
 
 function encodeRFC3986(str) {
@@ -147,9 +147,9 @@ function escapeXml(str) {
 */
 
 const CAPTION_PREVIEW_FONT_PX = 14;
-const CAPTION_PREVIEW_LINE_H  = 1.3;
-const CAPTION_PREVIEW_PAD_Y   = 10;
-const CAPTION_PREVIEW_PAD_X   = 0;
+const CAPTION_PREVIEW_LINE_H = 1.3;
+const CAPTION_PREVIEW_PAD_Y = 10;
+const CAPTION_PREVIEW_PAD_X = 0;
 
 const CAPTION_EXPORT_MIN_PAD_X = 0;
 
@@ -158,7 +158,7 @@ const PREVIEW_BASE_PX = 280;
 function captionLayoutFor(sizePx) {
   const scale = sizePx / PREVIEW_BASE_PX;
 
-  const fontSize  = Math.max(10, Math.round(CAPTION_PREVIEW_FONT_PX * scale));
+  const fontSize = Math.max(10, Math.round(CAPTION_PREVIEW_FONT_PX * scale));
   const lineHeight = Math.round(fontSize * CAPTION_PREVIEW_LINE_H);
 
   const padY = Math.max(4, Math.round(CAPTION_PREVIEW_PAD_Y * scale));
@@ -208,7 +208,7 @@ function buildCaptionedSvg(svgText, sizePx, cap) {
   }).join("");
 
   const wrapped =
-`<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${totalH}" viewBox="0 0 ${sizePx} ${totalH}">
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${sizePx}" height="${totalH}" viewBox="0 0 ${sizePx} ${totalH}">
   <g>${inner}</g>
   ${bgRect}
   ${textEls}
@@ -486,6 +486,90 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
     }
 
     const qrWrap = qrMount.parentElement || qrMount;
+    /* =========================
+       PREVIEW PLACEHOLDER (ANIMATION)
+       ========================= */
+    const qrPlaceholder = document.createElement("div");
+    qrPlaceholder.className = "qrPlaceholder";
+    qrPlaceholder.setAttribute("aria-hidden", "true");
+    qrPlaceholder.innerHTML = `
+      <div class="sparkles" aria-hidden="true">
+        <span class="sparkle"></span>
+        <span class="sparkle"></span>
+        <span class="sparkle"></span>
+        <span class="sparkle"></span>
+        <span class="sparkle"></span>
+        <span class="sparkle"></span>
+      </div>
+      <div class="qrFrame" aria-hidden="true">
+        <div class="qrGrid"></div>
+        <div class="scanGlow"></div>
+        <div class="scanLine"></div>
+      </div>
+    `;
+
+    qrWrap.style.position = "relative";
+    qrMount.style.position = "relative";
+    qrMount.style.zIndex = "2";
+
+    qrPlaceholder.style.position = "absolute";
+    qrPlaceholder.style.inset = "0";
+    qrPlaceholder.style.display = "grid";
+    qrPlaceholder.style.placeItems = "center";
+    qrPlaceholder.style.pointerEvents = "none";
+    qrPlaceholder.style.zIndex = "1";
+
+    qrWrap.insertBefore(qrPlaceholder, qrMount);
+
+
+    function getVisibleRequiredEls() {
+      const root = typeFields || document;
+      const els = Array.from(root.querySelectorAll("input[required], textarea[required]"));
+      return els.filter(el => !el.disabled && el.offsetParent !== null);
+    }
+
+
+    function hidePreview() {
+      qrMount.style.visibility = "hidden";
+      if (typeof qrPlaceholder !== "undefined") qrPlaceholder.style.visibility = "visible";
+      qrWrap.querySelector(".qr-caption-wrap")?.remove();
+      lastState = null;
+      setEncodedSummary("");
+    }
+
+    function showPreview() {
+      qrMount.style.visibility = "visible";
+      if (typeof qrPlaceholder !== "undefined") qrPlaceholder.style.visibility = "hidden";
+    }
+
+
+    function validateRequiredOnDownload() {
+      const requiredEls = getVisibleRequiredEls();
+      let ok = true;
+
+      for (const el of requiredEls) {
+        const v = String(el.value || "").trim();
+        if (!v) {
+          el.classList.add("input-error");
+          el.value = "";
+          el.placeholder = "Required";
+          ok = false;
+        } else {
+          el.classList.remove("input-error");
+        }
+      }
+
+      if (!ok) hidePreview();
+      return ok;
+    }
+
+    // Clear error styling as soon as the user types.
+    document.addEventListener("input", (ev) => {
+      const el = ev.target;
+      if (el && el.classList && el.classList.contains("input-error")) {
+        el.classList.remove("input-error");
+      }
+    });
 
     let activeTypeId = "website";
     const PREVIEW_PX = PREVIEW_BASE_PX;
@@ -558,6 +642,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
 
     qr.append(qrMount);
     qrMount.style.backgroundColor = getBgHex();
+    hidePreview();
 
     /* =========================
        CAPTION PREVIEW (FULL-WIDTH, MATCH EXPORT)
@@ -668,7 +753,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       }
 
       if (nominatimAbort) {
-        try { nominatimAbort.abort(); } catch {}
+        try { nominatimAbort.abort(); } catch { }
       }
       nominatimAbort = new AbortController();
 
@@ -820,7 +905,6 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
         grid.appendChild(wrap);
       }
 
-      // Location extra UI
       if (activeTypeId === "location") {
         const searchEl = document.getElementById("field_search");
         if (searchEl) {
@@ -952,6 +1036,25 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       }
 
       if (activeTypeId === "location") updateLocationPreview(values);
+
+      const requiredEls = getVisibleRequiredEls();
+      const allRequiredFilled = requiredEls.every(el => String(el.value || "").trim());
+      if (!allRequiredFilled) {
+        hidePreview();
+        return;
+      }
+
+      if (activeTypeId === "location") {
+        const root = typeFields || document;
+        const valueEls = Array.from(root.querySelectorAll("input, textarea, select"))
+          .filter(el => !el.disabled && el.offsetParent !== null);
+        const hasAnyValue = valueEls.some(el => String(el.value || "").trim());
+        if (!hasAnyValue) {
+          hidePreview();
+          return;
+        }
+      }
+      showPreview();
 
       const data = built || lastState?.data || "";
       if (!data) return;
@@ -1088,6 +1191,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
 
     dlPng?.addEventListener("click", async (e) => {
       e.preventDefault();
+      if (!validateRequiredOnDownload()) return;
       updateQr(true);
       const px = Number(size?.value || 320);
 
@@ -1120,6 +1224,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
 
     dlSvg?.addEventListener("click", async (e) => {
       e.preventDefault();
+      if (!validateRequiredOnDownload()) return;
       updateQr(true);
       const px = Number(size?.value || 320);
 
@@ -1139,6 +1244,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
 
     dlJpg?.addEventListener("click", async (e) => {
       e.preventDefault();
+      if (!validateRequiredOnDownload()) return;
       updateQr(true);
       const px = Number(size?.value || 320);
 
@@ -1158,6 +1264,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
 
     dlPdf?.addEventListener("click", async (e) => {
       e.preventDefault();
+      if (!validateRequiredOnDownload()) return;
       updateQr(true);
       const px = Number(size?.value || 320);
 

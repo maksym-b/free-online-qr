@@ -717,13 +717,15 @@ input[type="range"]::-moz-range-thumb {
   display: block;
 }
 
-.field.is-invalid input,
-.field.is-invalid textarea {
+\.field.is-invalid input,
+\.field.is-invalid textarea,
+\.field.is-invalid select {
   border-color: #ff4d4f;
 }
 
-.field.is-invalid input:focus,
-.field.is-invalid textarea:focus {
+\.field.is-invalid input:focus,
+\.field.is-invalid textarea:focus,
+\.field.is-invalid select:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 77, 79, 0.18);
 }
@@ -1726,4 +1728,43 @@ body.cookie-open {
     opacity: 1;
     transform: scale(1.02);
   }
+}
+
+.input-error,
+.input-error input,
+.input-error textarea,
+input.input-error,
+textarea.input-error {
+  border: 2px solid #e53935 !important;
+  color: #e53935;
+}
+
+.input-error::placeholder,
+.input-error input::placeholder,
+.input-error textarea::placeholder {
+  color: #e53935;
+  opacity: 1;
+}
+
+/* Contact form: invalid required fields */
+.field.is-invalid input,
+.field.is-invalid textarea,
+.field.is-invalid select {
+  border: 2px solid #e53935 !important;
+  outline: none;
+}
+
+.field.is-invalid input::placeholder,
+.field.is-invalid textarea::placeholder {
+  color: #e53935;
+  opacity: 1;
+}
+
+.field.is-invalid .field__error {
+  color: #e53935;
+}
+
+.field.is-invalid input[type="checkbox"] {
+  outline: 2px solid #e53935;
+  outline-offset: 2px;
 }
