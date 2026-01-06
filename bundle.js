@@ -563,7 +563,6 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       return ok;
     }
 
-    // Clear error styling as soon as the user types.
     document.addEventListener("input", (ev) => {
       const el = ev.target;
       if (el && el.classList && el.classList.contains("input-error")) {
@@ -1266,18 +1265,76 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       e.preventDefault();
       if (!validateRequiredOnDownload()) return;
       updateQr(true);
-      const px = Number(size?.value || 320);
 
-      const svgBlob = await withTempQr(px, async (tmp) =>
+      const desiredPx = Number(size?.value || 320);
+
+      const genPx = Math.min(desiredPx, 384);
+      const scaleUp = desiredPx / genPx;
+
+      const svgBlob = await withTempQr(genPx, async (tmp) =>
         new Promise((resolve) => tmp.getRawData("svg").then(resolve))
       );
       const svgText = await svgBlob.text();
 
       const cap = getCaptionSettings();
-      const wrapped = buildCaptionedSvg(svgText, px, cap);
+      const wrapped = buildCaptionedSvg(svgText, genPx, cap);
 
-      const pngDataUrl = await svgToPngDataUrl(wrapped.svgText, wrapped.width, wrapped.height, getBgHex());
-      await pngToPdf(pngDataUrl, wrapped.width, wrapped.height, `${safeName()}.pdf`);
+      try {
+        const { jsPDF } = window.jspdf || {};
+        if (!jsPDF) throw new Error("jsPDF not available on window.jspdf");
+
+        const svg2pdfFn =
+          (window.svg2pdf && window.svg2pdf.svg2pdf) ||
+          window.svg2pdf;
+
+        if (typeof svg2pdfFn !== "function") {
+          throw new Error("svg2pdf.js not loaded");
+        }
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(wrapped.svgText, "image/svg+xml");
+        const svgEl = doc.documentElement;
+        if (!svgEl.getAttribute("xmlns")) {
+          svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        }
+
+        const pxToPt = 72 / 96; // 0.75
+        const pdfScale = pxToPt * scaleUp;
+
+        const ptW = wrapped.width * pdfScale;
+        const ptH = wrapped.height * pdfScale;
+
+        const pdf = new jsPDF({
+          orientation: ptW >= ptH ? "landscape" : "portrait",
+          unit: "pt",
+          format: [ptW, ptH],
+          compress: true,
+        });
+
+        await svg2pdfFn(svgEl, pdf, {
+          xOffset: 0,
+          yOffset: 0,
+          scale: pdfScale,
+        });
+
+        pdf.save(`${safeName()}.pdf`);
+        return;
+      } catch (err) {
+        console.warn("Vector PDF export failed; using raster fallback:", err);
+      }
+
+      const pngDataUrl = await svgToPngDataUrl(
+        wrapped.svgText,
+        wrapped.width,
+        wrapped.height,
+        getBgHex()
+      );
+      await pngToPdf(
+        pngDataUrl,
+        wrapped.width * scaleUp,
+        wrapped.height * scaleUp,
+        `${safeName()}.pdf`
+      );
     });
 
     // init
