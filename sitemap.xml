@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main pages -->
+  <url>
+    <loc>https://www.free-online-qr.com/</loc>
+  </url>
+  <url>
+    <loc>https://www.free-online-qr.com/about.html</loc>
+  </url>
+  <url>
+    <loc>https://www.free-online-qr.com/qr-applications.html</loc>
+  </url>
+  <url>
+    <loc>https://www.free-online-qr.com/static-vs-dynamic-qr.html</loc>
+  </url>
+  <url>
+    <loc>https://www.free-online-qr.com/contact.html</loc>
+  </url>
+
+  <!-- Legal / informational pages -->
+  <url>
+    <loc>https://www.free-online-qr.com/privacy.html</loc>
+  </url>
+  <url>
+    <loc>https://www.free-online-qr.com/cookies.html</loc>
+  </url>
+  <url>
+    <loc>https://www.free-online-qr.com/terms.html</loc>
+  </url>
+
+</urlset>
