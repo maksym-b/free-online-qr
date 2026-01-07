@@ -530,11 +530,11 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
     qrWrap.insertBefore(qrPlaceholder, qrMount);
 
 
-function getVisibleRequiredEls() {
-  const root = typeFields || document;
-  const els = Array.from(root.querySelectorAll("input[required], textarea[required], select[required]"));
-  return els.filter(el => !el.disabled && el.offsetParent !== null);
-}
+    function getVisibleRequiredEls() {
+      const root = typeFields || document;
+      const els = Array.from(root.querySelectorAll("input[required], textarea[required], select[required]"));
+      return els.filter(el => !el.disabled && el.offsetParent !== null);
+    }
 
     function hidePreview() {
       qrMount.style.visibility = "hidden";
@@ -550,44 +550,44 @@ function getVisibleRequiredEls() {
     }
 
 
-function validateRequiredOnDownload() {
-  const requiredEls = getVisibleRequiredEls();
-  let firstInvalid = null;
+    function validateRequiredOnDownload() {
+      const requiredEls = getVisibleRequiredEls();
+      let firstInvalid = null;
 
-  for (const el of requiredEls) {
-    const v = String(el.value || "").trim();
-    const invalid = !v;
+      for (const el of requiredEls) {
+        const v = String(el.value || "").trim();
+        const invalid = !v;
 
-    if (invalid) {
-      el.classList.add("input-error");
-      el.setAttribute("aria-invalid", "true");
+        if (invalid) {
+          el.classList.add("input-error");
+          el.setAttribute("aria-invalid", "true");
 
-      // Keep your current UX for empty inputs
-      if (el.tagName !== "SELECT") {
-        el.value = "";
-        el.placeholder = "Required";
+          // Keep your current UX for empty inputs
+          if (el.tagName !== "SELECT") {
+            el.value = "";
+            el.placeholder = "Required";
+          }
+
+          if (!firstInvalid) firstInvalid = el;
+        } else {
+          el.classList.remove("input-error");
+          el.removeAttribute("aria-invalid");
+        }
       }
 
-      if (!firstInvalid) firstInvalid = el;
-    } else {
-      el.classList.remove("input-error");
-      el.removeAttribute("aria-invalid");
+      if (firstInvalid) {
+        hidePreview();
+        firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => {
+          try { firstInvalid.focus({ preventScroll: true }); } catch { firstInvalid.focus(); }
+          if (firstInvalid.select) firstInvalid.select();
+        }, 50);
+
+        return false;
+      }
+
+      return true;
     }
-  }
-
-  if (firstInvalid) {
-    hidePreview();
-    firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
-    setTimeout(() => {
-      try { firstInvalid.focus({ preventScroll: true }); } catch { firstInvalid.focus(); }
-      if (firstInvalid.select) firstInvalid.select();
-    }, 50);
-
-    return false;
-  }
-
-  return true;
-}
     document.addEventListener("input", (ev) => {
       const el = ev.target;
       if (el && el.classList && el.classList.contains("input-error")) {
@@ -1165,11 +1165,21 @@ function validateRequiredOnDownload() {
 
     size?.addEventListener("input", () => updateQr(false));
 
-    // Website URL static field
-    document.getElementById("websiteUrl")?.addEventListener("input", () => updateQr(false));
+    document.getElementById("websiteUrl")?.addEventListener("input", (e) => {
+      const el = e.target;
+      const raw = String(el.value || "");
+      const trimmed = raw.trim();
+
+      if (trimmed && !/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(trimmed) && !trimmed.startsWith("//")) {
+        if (trimmed.includes(".") && !/\s/.test(trimmed)) {
+          el.value = "https://" + trimmed.replace(/^https?:\/\//i, "");
+        }
+      }
+
+      updateQr(false);
+    });
     document.getElementById("websiteUrl")?.addEventListener("change", () => updateQr(true));
 
-    // Caption listeners
     document.getElementById("captionText")?.addEventListener("input", () => updateQr(false));
     document.getElementById("captionFont")?.addEventListener("change", () => updateQr(false));
 
