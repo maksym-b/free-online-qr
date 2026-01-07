@@ -530,12 +530,11 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
     qrWrap.insertBefore(qrPlaceholder, qrMount);
 
 
-    function getVisibleRequiredEls() {
-      const root = typeFields || document;
-      const els = Array.from(root.querySelectorAll("input[required], textarea[required]"));
-      return els.filter(el => !el.disabled && el.offsetParent !== null);
-    }
-
+function getVisibleRequiredEls() {
+  const root = typeFields || document;
+  const els = Array.from(root.querySelectorAll("input[required], textarea[required], select[required]"));
+  return els.filter(el => !el.disabled && el.offsetParent !== null);
+}
 
     function hidePreview() {
       qrMount.style.visibility = "hidden";
@@ -551,26 +550,44 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
     }
 
 
-    function validateRequiredOnDownload() {
-      const requiredEls = getVisibleRequiredEls();
-      let ok = true;
+function validateRequiredOnDownload() {
+  const requiredEls = getVisibleRequiredEls();
+  let firstInvalid = null;
 
-      for (const el of requiredEls) {
-        const v = String(el.value || "").trim();
-        if (!v) {
-          el.classList.add("input-error");
-          el.value = "";
-          el.placeholder = "Required";
-          ok = false;
-        } else {
-          el.classList.remove("input-error");
-        }
+  for (const el of requiredEls) {
+    const v = String(el.value || "").trim();
+    const invalid = !v;
+
+    if (invalid) {
+      el.classList.add("input-error");
+      el.setAttribute("aria-invalid", "true");
+
+      // Keep your current UX for empty inputs
+      if (el.tagName !== "SELECT") {
+        el.value = "";
+        el.placeholder = "Required";
       }
 
-      if (!ok) hidePreview();
-      return ok;
+      if (!firstInvalid) firstInvalid = el;
+    } else {
+      el.classList.remove("input-error");
+      el.removeAttribute("aria-invalid");
     }
+  }
 
+  if (firstInvalid) {
+    hidePreview();
+    firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+    setTimeout(() => {
+      try { firstInvalid.focus({ preventScroll: true }); } catch { firstInvalid.focus(); }
+      if (firstInvalid.select) firstInvalid.select();
+    }, 50);
+
+    return false;
+  }
+
+  return true;
+}
     document.addEventListener("input", (ev) => {
       const el = ev.target;
       if (el && el.classList && el.classList.contains("input-error")) {
