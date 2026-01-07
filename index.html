@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free QR Code Generator</title>
-    <link rel="canonical" href="https://www.free-online-qr.com/" />
-    <link rel="icon" href="/assets/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free QR Code Generator</title>
+  <link rel="canonical" href="https://www.free-online-qr.com/" />
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body>
@@ -74,6 +74,7 @@
 
         <form id="qrForm" class="form" autocomplete="off">
           <div id="typeFields">
+
             <!-- Website URL  -->
             <div class="field" id="websiteField">
               <label for="websiteUrl">Website URL *</label>
@@ -165,13 +166,29 @@
             <div id="qrMount" class="qrMount" aria-label="QR code preview"></div>
           </div>
 
+          <!-- Logo upload -->
+          <div class="downloads">
+            <h2 class="h2">Upload logo</h2>
+
+            <div class="field logoField">
+              <div class="logoRow">
+                <input id="logoFile" type="file" accept="image/png,image/jpeg,image/svg+xml" />
+                <button type="button" class="btn btn--small btn--ghost" id="logoRemove" disabled>
+                  Remove
+                </button>
+              </div>
+
+              <div class="hint">
+                Accepted files: PNG, JPG, SVG.
+              </div>
+            </div>
+          </div>
           <div class="downloads">
             <h2 class="h2">Download</h2>
             <div class="downloadRow">
               <button class="btn btn--small" id="dlPng">PNG</button>
               <button class="btn btn--small" id="dlJpg">JPG</button>
               <button class="btn btn--small" id="dlSvg">SVG</button>
-              <button class="btn btn--small" id="dlPdf">PDF</button>
             </div>
             <div class="hint">PNG exports are transparent. Other formats include the background color.</div>
 
@@ -186,11 +203,11 @@
       </div>
     </section>
   </main>
-<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/svg2pdf.js@2.2.3/dist/svg2pdf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/svg2pdf.js@2.2.3/dist/svg2pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
 
-<script src="./bundle.js"></script>
+  <script src="./bundle.js"></script>
   <!-- Buy me a coffee -->
   <section class="coffee">
     <div class="container coffee__inner">

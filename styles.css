@@ -389,7 +389,6 @@ textarea {
 .downloadRow {
   display: flex;
   gap: 10px;
-  margin: 16px 0 16px 0;
   flex-wrap: wrap;
 }
 
@@ -519,9 +518,6 @@ textarea {
 }
 
 /* Size control inside the Download panel */
-.downloadsSize {
-  margin-top: 10px;
-}
 
 .downloadsSize input[type="range"] {
   width: 100%;
@@ -1762,4 +1758,36 @@ textarea.input-error {
 
 .field.is-invalid .field__error {
   color: #e53935;
+}
+
+/* Logo fields */
+
+.logoRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logoRow input[type="file"] {
+  flex: 1 1 auto;
+  padding: 10px 12px;
+}
+
+.downloads {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+
+.logoUpload {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
 }

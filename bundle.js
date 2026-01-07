@@ -453,14 +453,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
   return canvas.toDataURL("image/jpeg", quality);
 }
 
-async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename = "qr.pdf") {
-  const { jsPDF } = window.jspdf;
-  const ptW = widthPx * 0.75;
-  const ptH = heightPx * 0.75;
-  const pdf = new jsPDF({ orientation: "portrait", unit: "pt", format: [ptW, ptH] });
-  pdf.addImage(pngDataUrl, "PNG", 0, 0, ptW, ptH);
-  pdf.save(filename);
-}
 
 /* =========================
    app.js (inlined)
@@ -486,7 +478,15 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
     const dlPng = document.getElementById("dlPng");
     const dlJpg = document.getElementById("dlJpg");
     const dlSvg = document.getElementById("dlSvg");
-    const dlPdf = document.getElementById("dlPdf");
+
+    // Logo upload (optional)
+    const logoFile = document.getElementById("logoFile");
+    const logoRemove = document.getElementById("logoRemove");
+    const logoToggle = document.querySelector(".logoToggle");
+    const logoPanel = document.getElementById("logoPanel");
+
+    let logoDataUrl = null;
+    const LOGO_IMAGE_SIZE = 0.32;
 
     if (!typeGrid || !typeFields || !activeTypeTitle || !activeTypeDesc || !qrMount) {
       console.error("Missing required DOM nodes. Ensure bundle.js is loaded after HTML.");
@@ -606,6 +606,27 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       return clampHexWithDefault(bgColorHex?.value, "#FFFFFF");
     }
 
+
+    function hasLogo() {
+      return !!(logoDataUrl && String(logoDataUrl).startsWith("data:image/"));
+    }
+
+    function getQrEcLevel() {
+      // With a logo, use higher redundancy for better scan reliability
+      return hasLogo() ? "H" : "M";
+    }
+
+    function getLogoOptions() {
+      // IMPORTANT: always provide the `image` key so removing a logo actually clears it
+      return {
+        image: hasLogo() ? logoDataUrl : null,
+        imageOptions: {
+          hideBackgroundDots: true,
+          imageSize: LOGO_IMAGE_SIZE,
+          margin: 6,
+        },
+      };
+    }
     let lastState = {
       data: "",
       hex: (colorHex?.value || "#000000"),
@@ -635,9 +656,10 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
         type: "svg",
         data: lastState.data,
         margin: getExportMarginPx(sizePx),
-        qrOptions: { errorCorrectionLevel: "M" },
+        qrOptions: { errorCorrectionLevel: getQrEcLevel() },
         dotsOptions: { type: "square", color: lastState.hex },
         backgroundOptions: { color: getBgHex() },
+        ...getLogoOptions(),
       });
     }
 
@@ -659,9 +681,10 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       type: "svg",
       data: "",
       margin: 0,
-      qrOptions: { errorCorrectionLevel: "M" },
+      qrOptions: { errorCorrectionLevel: getQrEcLevel() },
       dotsOptions: { type: "square", color: (colorHex?.value || "#000000") },
       backgroundOptions: { color: getBgHex() },
+      ...getLogoOptions(),
     });
 
     qr.append(qrMount);
@@ -1090,6 +1113,8 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
         margin: 0,
         dotsOptions: { type: "square", color: lastState.hex },
         backgroundOptions: { color: bgHex },
+        qrOptions: { errorCorrectionLevel: getQrEcLevel() },
+        ...getLogoOptions(),
       });
 
       setEncodedSummary(built || "");
@@ -1217,6 +1242,53 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
       updateQr(false);
     });
 
+
+    // Logo panel toggle
+    logoToggle?.addEventListener("click", () => {
+      const expanded = logoToggle.getAttribute("aria-expanded") === "true";
+      logoToggle.setAttribute("aria-expanded", String(!expanded));
+      if (logoPanel) logoPanel.hidden = expanded;
+    });
+
+    // Logo upload/remove
+    logoFile?.addEventListener("change", () => {
+      const f = logoFile.files && logoFile.files[0];
+      if (!f) return;
+
+      const ok =
+        f.type === "image/png" ||
+        f.type === "image/jpeg" ||
+        f.type === "image/svg+xml";
+
+      if (!ok) {
+        alert("Please upload a PNG, JPG, or SVG file.");
+        logoFile.value = "";
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        logoDataUrl = String(reader.result || "");
+        if (logoRemove) logoRemove.disabled = false;
+
+        // Auto-expand panel after upload (only if you have a collapsible UI)
+        if (logoToggle && logoPanel && logoPanel.hidden) {
+          logoToggle.setAttribute("aria-expanded", "true");
+          logoPanel.hidden = false;
+        }
+
+        updateQr(true);
+      };
+      reader.readAsDataURL(f);
+    });
+
+    logoRemove?.addEventListener("click", () => {
+      logoDataUrl = null;
+      if (logoFile) logoFile.value = "";
+      if (logoRemove) logoRemove.disabled = true;
+      updateQr(true);
+    });
+
     btnReset?.addEventListener("click", resetAll);
 
     /* =========================
@@ -1236,9 +1308,10 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
         type: "svg",
         data: lastState.data,
         margin: getExportMarginPx(px),
-        qrOptions: { errorCorrectionLevel: "M" },
+        qrOptions: { errorCorrectionLevel: getQrEcLevel() },
         dotsOptions: { type: "square", color: lastState.hex },
         backgroundOptions: { color: "transparent" },
+        ...getLogoOptions(),
       });
 
       tmp.append(mount);
@@ -1295,83 +1368,6 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
 
       downloadDataUrl(jpgDataUrl, `${safeName()}.jpg`);
     });
-
-    dlPdf?.addEventListener("click", async (e) => {
-      e.preventDefault();
-      if (!validateRequiredOnDownload()) return;
-      updateQr(true);
-
-      const desiredPx = Number(size?.value || 320);
-
-      const genPx = Math.min(desiredPx, 384);
-      const scaleUp = desiredPx / genPx;
-
-      const svgBlob = await withTempQr(genPx, async (tmp) =>
-        new Promise((resolve) => tmp.getRawData("svg").then(resolve))
-      );
-      const svgText = await svgBlob.text();
-
-      const cap = getCaptionSettings();
-      const wrapped = buildCaptionedSvg(svgText, genPx, cap);
-
-      try {
-        const { jsPDF } = window.jspdf || {};
-        if (!jsPDF) throw new Error("jsPDF not available on window.jspdf");
-
-        const svg2pdfFn =
-          (window.svg2pdf && window.svg2pdf.svg2pdf) ||
-          window.svg2pdf;
-
-        if (typeof svg2pdfFn !== "function") {
-          throw new Error("svg2pdf.js not loaded");
-        }
-
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(wrapped.svgText, "image/svg+xml");
-        const svgEl = doc.documentElement;
-        if (!svgEl.getAttribute("xmlns")) {
-          svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-        }
-
-        const pxToPt = 72 / 96; // 0.75
-        const pdfScale = pxToPt * scaleUp;
-
-        const ptW = wrapped.width * pdfScale;
-        const ptH = wrapped.height * pdfScale;
-
-        const pdf = new jsPDF({
-          orientation: ptW >= ptH ? "landscape" : "portrait",
-          unit: "pt",
-          format: [ptW, ptH],
-          compress: true,
-        });
-
-        await svg2pdfFn(svgEl, pdf, {
-          xOffset: 0,
-          yOffset: 0,
-          scale: pdfScale,
-        });
-
-        pdf.save(`${safeName()}.pdf`);
-        return;
-      } catch (err) {
-        console.warn("Vector PDF export failed; using raster fallback:", err);
-      }
-
-      const pngDataUrl = await svgToPngDataUrl(
-        wrapped.svgText,
-        wrapped.width,
-        wrapped.height,
-        getBgHex()
-      );
-      await pngToPdf(
-        pngDataUrl,
-        wrapped.width * scaleUp,
-        wrapped.height * scaleUp,
-        `${safeName()}.pdf`
-      );
-    });
-
     // init
     if (typeFromUrl) {
       history.replaceState(null, "", "./index.html#generator");
