@@ -718,7 +718,7 @@ async function pngToPdf(pngDataUrl, widthPx = 320, heightPx = widthPx, filename 
         return `
           <button type="button" class="prefooter__link" data-idx="${idx}" style="justify-content:flex-start;">
             ${name}
-            <span class="muted small" style="margin-left:8px;">(${lat}, ${lon})</span>
+            <span class="muted small" style="margin-left:0px;">(${lat}, ${lon})</span>
           </button>
         `;
       }).join("");
