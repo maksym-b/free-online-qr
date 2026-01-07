@@ -245,14 +245,22 @@ const QR_TYPES = [
     icon: "🛜",
     fields: () => ([
       { id: "ssid", label: "SSID", type: "text", placeholder: "Network name", required: true },
-      { id: "security", label: "Security", type: "select", options: ["", "WEP", "nopass"], required: true },
+      { id: "security", label: "Security", type: "select", options: ["", "WPA", "WEP", "nopass"], required: true },
       { id: "password", label: "Password", type: "text", placeholder: "Wi-Fi password", required: false },
     ]),
     buildPayload: (v) => {
       const ssid = (v.ssid || "").replaceAll("\\", "\\\\").replaceAll(";", "\\;");
-      const pwd = (v.password || "").replaceAll("\\", "\\\\").replaceAll(";", "\\;");
-      const sec = v.security || "";
-      return `WIFI:T:${sec};S:${ssid};P:${pwd};`;
+      const sec = (v.security || "").trim();
+
+      if (!sec) return "";
+      if (sec === "nopass") {
+        return `WIFI:T:nopass;S:${ssid};;`;
+      }
+      const pwdRaw = (v.password || "").trim();
+      if (!pwdRaw) return "";
+
+      const pwd = pwdRaw.replaceAll("\\", "\\\\").replaceAll(";", "\\;");
+      return `WIFI:T:${sec};S:${ssid};P:${pwd};;`;
     },
   },
   {
