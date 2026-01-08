@@ -124,7 +124,7 @@ body {
   margin-top: 14px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
 }
 
 @media (max-width: 960px) {
@@ -237,6 +237,9 @@ body {
 
 .form {
   display: grid;
+}
+
+.contact .form {
   gap: 12px;
 }
 
@@ -418,7 +421,9 @@ textarea {
   place-items: center;
   border-radius: var(--radius2);
   border: 1px dashed rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.03);
+  background: radial-gradient(600px 300px at 30% 20%, rgba(11, 95, 255, 0.25), transparent 60%),
+    radial-gradient(600px 300px at 80% 70%, rgba(139, 92, 246, 0.18), transparent 60%),
+    radial-gradient(700px 380px at 50% 120%, rgba(34, 197, 94, 0.10), transparent 60%);
 }
 
 .qrMount {
@@ -928,7 +933,7 @@ body.cookie-open {
 
 /* Location */
 .locationMap {
-  margin-top: 12px;
+  margin-top: 6px;
   border-radius: var(--radius2);
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);

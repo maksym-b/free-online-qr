@@ -474,7 +474,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
     const size = document.getElementById("size");
     const sizeLabel = document.getElementById("sizeLabel");
 
-    const btnReset = document.getElementById("btnReset");
     const dlPng = document.getElementById("dlPng");
     const dlJpg = document.getElementById("dlJpg");
     const dlSvg = document.getElementById("dlSvg");
@@ -1005,7 +1004,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
 
         const mapWrap = document.createElement("div");
         mapWrap.className = "locationMap";
-        mapWrap.style.marginTop = "12px";
         mapWrap.innerHTML = `<div id="locationPreview"></div>`;
         typeFields.appendChild(mapWrap);
       }
@@ -1141,6 +1139,10 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       if (ccHex) ccHex.value = "#000000";
       if (cbPick) cbPick.value = "#FFFFFF";
       if (cbHex) cbHex.value = "#FFFFFF";
+
+      logoDataUrl = null;
+      if (logoFile) logoFile.value = "";
+      if (logoRemove) logoRemove.disabled = true;
 
       qrWrap.querySelector(".qr-caption-wrap")?.remove();
 
@@ -1289,8 +1291,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       updateQr(true);
     });
 
-    btnReset?.addEventListener("click", resetAll);
-
     /* =========================
        DOWNLOADS
        ========================= */
@@ -1376,6 +1376,9 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
     renderMenu();
     renderFields();
     updateQr(true);
+    document
+      .getElementById("previewReset")
+      ?.addEventListener("click", resetAll);
   };
 
   if (document.readyState === "loading") {
