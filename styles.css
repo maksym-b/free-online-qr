@@ -1791,3 +1791,13 @@ textarea.input-error {
   display: grid;
   gap: 14px;
 }
+
+.formSection {
+  margin-top: 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}

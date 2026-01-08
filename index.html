@@ -95,59 +95,68 @@
             <div id="dynamicFields"></div>
           </div>
 
-          <div class="row">
-            <div class="field">
-              <label>QR color</label>
-              <div class="colorRow">
-                <input id="colorPicker" type="color" value="#000000" />
-                <input id="colorHex" type="text" value="#000000" inputmode="text" spellcheck="false" />
+          <!-- Adjust colors -->
+          <div class="formSection">
+            <h2 class="h2">Adjust colors</h2>
+
+            <div class="row">
+              <div class="field">
+                <label>QR color</label>
+                <div class="colorRow">
+                  <input id="colorPicker" type="color" value="#000000" />
+                  <input id="colorHex" type="text" value="#000000" inputmode="text" spellcheck="false" />
+                </div>
+                <div class="hint">Darker colors scan best.</div>
               </div>
-              <div class="hint">Darker colors scan best.</div>
-            </div>
 
-            <div class="field">
-              <label>QR Background color</label>
-              <div class="colorRow">
-                <input id="bgColorPicker" type="color" value="#FFFFFF" />
-                <input id="bgColorHex" type="text" value="#FFFFFF" inputmode="text" spellcheck="false" />
-              </div>
-              <div class="hint">Lighter backgrounds scan best.</div>
-            </div>
-          </div>
-
-          <div class="field" id="captionField">
-            <label for="captionText">Text</label>
-            <input id="captionText" type="text" maxlength="80" placeholder="E.g. Scan me" />
-            <div class="hint">Optional text shown under QR.</div>
-          </div>
-
-          <div class="row" id="captionStyleRow">
-            <div class="field">
-              <label for="captionColor">Text color</label>
-              <div class="colorRow">
-                <input id="captionColorPicker" type="color" value="#000000" />
-                <input id="captionColor" type="text" value="#000000" spellcheck="false" />
+              <div class="field">
+                <label>QR Background color</label>
+                <div class="colorRow">
+                  <input id="bgColorPicker" type="color" value="#FFFFFF" />
+                  <input id="bgColorHex" type="text" value="#FFFFFF" inputmode="text" spellcheck="false" />
+                </div>
+                <div class="hint">Lighter backgrounds scan best.</div>
               </div>
             </div>
-
-            <div class="field">
-              <label for="captionFont">Font</label>
-              <select id="captionFont">
-                <option value="sans" selected>Sans</option>
-                <option value="serif">Serif</option>
-                <option value="mono">Mono</option>
-              </select>
-            </div>
           </div>
 
-          <div class="field" id="captionBgField" hidden>
-            <label for="captionBgColor">Text background color</label>
-            <div class="colorRow">
-              <input id="captionBgPicker" type="color" value="#FFFFFF" />
-              <input id="captionBgColor" type="text" value="#FFFFFF" spellcheck="false" />
+          <!-- Add text -->
+          <div class="formSection">
+            <h2 class="h2">Add text</h2>
+
+            <div class="field" id="captionField">
+              <label for="captionText">Text</label>
+              <input id="captionText" type="text" maxlength="80" placeholder="E.g. Scan me" />
+              <div class="hint">Optional text shown under QR.</div>
+            </div>
+
+            <div class="row" id="captionStyleRow">
+              <div class="field">
+                <label for="captionColor">Text color</label>
+                <div class="colorRow">
+                  <input id="captionColorPicker" type="color" value="#000000" />
+                  <input id="captionColor" type="text" value="#000000" spellcheck="false" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="captionFont">Font</label>
+                <select id="captionFont">
+                  <option value="sans" selected>Sans</option>
+                  <option value="serif">Serif</option>
+                  <option value="mono">Mono</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" id="captionBgField">
+              <label for="captionBgColor">Text background color</label>
+              <div class="colorRow">
+                <input id="captionBgPicker" type="color" value="#FFFFFF" />
+                <input id="captionBgColor" type="text" value="#FFFFFF" spellcheck="false" />
+              </div>
             </div>
           </div>
-
           <div class="actions">
             <button type="button" class="btn btn--ghost" id="btnReset">Reset</button>
           </div>
