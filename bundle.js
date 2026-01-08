@@ -882,6 +882,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
           renderMenu();
           renderFields();
           updateQr(true);
+          collapseAllSections();
           document.getElementById("generator")?.scrollIntoView({ behavior: "smooth", block: "start" });
         });
 
@@ -1149,6 +1150,8 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       renderMenu();
       renderFields();
       updateQr(true);
+      collapseAllSections();
+
     }
 
     function safeName() {
@@ -1272,8 +1275,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       reader.onload = () => {
         logoDataUrl = String(reader.result || "");
         if (logoRemove) logoRemove.disabled = false;
-
-        // Auto-expand panel after upload (only if you have a collapsible UI)
         if (logoToggle && logoPanel && logoPanel.hidden) {
           logoToggle.setAttribute("aria-expanded", "true");
           logoPanel.hidden = false;
@@ -1368,6 +1369,55 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
 
       downloadDataUrl(jpgDataUrl, `${safeName()}.jpg`);
     });
+
+    function initSimpleCollapsibles() {
+      const root = document.querySelector(".preview__card");
+      if (!root) return;
+
+      const sections = root.querySelectorAll(".formSection, .downloads");
+
+      sections.forEach(section => {
+        const header = section.querySelector("h2");
+        if (!header) return;
+
+        if (header.dataset.collapsibleInit === "1") return;
+        header.dataset.collapsibleInit = "1";
+
+        const content = Array.from(section.children).filter(el => el !== header);
+
+        header.setAttribute("aria-expanded", "false");
+        content.forEach(el => (el.style.display = "none"));
+
+        header.style.cursor = "pointer";
+        header.style.display = "block";
+        header.style.width = "100%";
+        header.style.userSelect = "none";
+
+        header.addEventListener("click", () => {
+          const expanded = header.getAttribute("aria-expanded") === "true";
+          header.setAttribute("aria-expanded", String(!expanded));
+          content.forEach(el => (el.style.display = expanded ? "none" : ""));
+        });
+      });
+    }
+
+    function collapseAllSections() {
+      const root = document.querySelector(".preview__card");
+      if (!root) return;
+
+      const sections = root.querySelectorAll(".formSection, .downloads");
+
+      sections.forEach(section => {
+        const header = section.querySelector("h2");
+        if (!header) return;
+
+        const content = Array.from(section.children).filter(el => el !== header);
+
+        header.setAttribute("aria-expanded", "false");
+        content.forEach(el => (el.style.display = "none"));
+      });
+    }
+
     // init
     if (typeFromUrl) {
       history.replaceState(null, "", "./index.html#generator");
@@ -1376,7 +1426,8 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
     renderMenu();
     renderFields();
     updateQr(true);
-    document
+
+    initSimpleCollapsibles(); document
       .getElementById("previewReset")
       ?.addEventListener("click", resetAll);
   };
