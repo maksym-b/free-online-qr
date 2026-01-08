@@ -1389,7 +1389,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         content.forEach(el => (el.style.display = "none"));
 
         header.style.cursor = "pointer";
-        header.style.display = "block";
         header.style.width = "100%";
         header.style.userSelect = "none";
 
