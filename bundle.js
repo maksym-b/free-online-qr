@@ -141,11 +141,6 @@ function escapeXml(str) {
     .replace(/'/g, "&apos;");
 }
 
-/* =========================
-   CAPTION STYLE SYNC (PREVIEW <-> EXPORT)
-   =========================
-*/
-
 const CAPTION_PREVIEW_FONT_PX = 14;
 const CAPTION_PREVIEW_LINE_H = 1.3;
 const CAPTION_PREVIEW_PAD_Y = 10;
@@ -218,7 +213,7 @@ function buildCaptionedSvg(svgText, sizePx, cap) {
 }
 
 /* =========================
-   types.js (inlined)
+   Caegories
    ========================= */
 
 const QR_TYPES = [
@@ -387,9 +382,6 @@ const QR_TYPES = [
   },
 ];
 
-/* =========================
-   export.js (inlined)
-   ========================= */
 
 async function svgToPngDataUrl(svgText, widthPx = 320, heightPx = widthPx, background = "transparent") {
   const svg = new Blob([svgText], { type: "image/svg+xml;charset=utf-8" });
@@ -453,7 +445,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
   return canvas.toDataURL("image/jpeg", quality);
 }
 
-
 /* =========================
    app.js (inlined)
    ========================= */
@@ -478,7 +469,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
     const dlJpg = document.getElementById("dlJpg");
     const dlSvg = document.getElementById("dlSvg");
 
-    // Logo upload (optional)
+    // Logo upload
     const logoFile = document.getElementById("logoFile");
     const logoRemove = document.getElementById("logoRemove");
     const logoToggle = document.querySelector(".logoToggle");
@@ -493,6 +484,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
     }
 
     const qrWrap = qrMount.parentElement || qrMount;
+
     /* =========================
        PREVIEW PLACEHOLDER (ANIMATION)
        ========================= */
@@ -528,7 +520,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
 
     qrWrap.insertBefore(qrPlaceholder, qrMount);
 
-
     function getVisibleRequiredEls() {
       const root = typeFields || document;
       const els = Array.from(root.querySelectorAll("input[required], textarea[required], select[required]"));
@@ -548,7 +539,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       if (typeof qrPlaceholder !== "undefined") qrPlaceholder.style.visibility = "hidden";
     }
 
-
     function validateRequiredOnDownload() {
       const requiredEls = getVisibleRequiredEls();
       let firstInvalid = null;
@@ -561,7 +551,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
           el.classList.add("input-error");
           el.setAttribute("aria-invalid", "true");
 
-          // Keep your current UX for empty inputs
           if (el.tagName !== "SELECT") {
             el.value = "";
             el.placeholder = "Required";
@@ -587,6 +576,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
 
       return true;
     }
+
     document.addEventListener("input", (ev) => {
       const el = ev.target;
       if (el && el.classList && el.classList.contains("input-error")) {
@@ -605,18 +595,15 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       return clampHexWithDefault(bgColorHex?.value, "#FFFFFF");
     }
 
-
     function hasLogo() {
       return !!(logoDataUrl && String(logoDataUrl).startsWith("data:image/"));
     }
 
     function getQrEcLevel() {
-      // With a logo, use higher redundancy for better scan reliability
       return hasLogo() ? "H" : "M";
     }
 
     function getLogoOptions() {
-      // IMPORTANT: always provide the `image` key so removing a logo actually clears it
       return {
         image: hasLogo() ? logoDataUrl : null,
         imageOptions: {
@@ -626,6 +613,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         },
       };
     }
+
     let lastState = {
       data: "",
       hex: (colorHex?.value || "#000000"),
@@ -707,7 +695,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       wrap.style.margin = "0 auto";
       wrap.style.textAlign = "center";
 
-      // Caption itself
       const el = document.createElement("div");
       el.className = "qr-caption";
       el.style.width = "100%";
@@ -738,7 +725,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       encodedSummary.textContent = s.length > 46 ? (s.slice(0, 46) + "…") : s;
     }
 
-    // --- Location search + map preview ---
+    // --- Location search + map --- //
     let nominatimAbort = null;
     let nominatimTimer = null;
 
@@ -763,9 +750,9 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         const lat = it.lat;
         const lon = it.lon;
         return `
-          <button type="button" class="prefooter__link" data-idx="${idx}" style="justify-content:flex-start;">
+          <button type="button" class="prefooter__link" data-idx="${idx}">
             ${name}
-            <span class="muted small" style="margin-left:0px;">(${lat}, ${lon})</span>
+            <span class="muted small">(${lat}, ${lon})</span>
           </button>
         `;
       }).join("");
@@ -952,8 +939,16 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         grid.appendChild(wrap);
       }
 
+      /* =========================
+         Location UI extras (Search button + results + map)
+         ========================= */
       if (activeTypeId === "location") {
         const searchEl = document.getElementById("field_search");
+
+        const results = document.createElement("div");
+        results.id = "locationResults";
+        results.className = "locationResults";
+
         if (searchEl) {
           const actions = document.createElement("div");
           actions.className = "actions";
@@ -974,7 +969,12 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
           actions.appendChild(hint);
 
           const fieldWrap = searchEl.closest(".field");
-          if (fieldWrap) fieldWrap.appendChild(actions);
+          if (fieldWrap) {
+            fieldWrap.appendChild(actions);
+            fieldWrap.appendChild(results);
+          } else {
+            typeFields.appendChild(results);
+          }
 
           searchEl.addEventListener("keydown", (e) => {
             if (e.key === "Enter") {
@@ -994,19 +994,24 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
               }
             }, 500);
           });
+        } else {
+          typeFields.appendChild(results);
         }
-
-        const results = document.createElement("div");
-        results.id = "locationResults";
-        results.style.display = "grid";
-        results.style.gap = "10px";
-        results.style.marginTop = "10px";
-        typeFields.appendChild(results);
 
         const mapWrap = document.createElement("div");
         mapWrap.className = "locationMap";
         mapWrap.innerHTML = `<div id="locationPreview"></div>`;
         typeFields.appendChild(mapWrap);
+
+        const latField = document.getElementById("field_lat")?.closest(".field");
+        const lonField = document.getElementById("field_lon")?.closest(".field");
+        if (latField && lonField) {
+          const row = document.createElement("div");
+          row.className = "row";
+          latField.parentNode.insertBefore(row, latField);
+          row.appendChild(latField);
+          row.appendChild(lonField);
+        }
       }
 
       // defaults
@@ -1100,6 +1105,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
           return;
         }
       }
+
       showPreview();
 
       const data = built || lastState?.data || "";
@@ -1151,7 +1157,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       renderFields();
       updateQr(true);
       collapseAllSections();
-
     }
 
     function safeName() {
@@ -1167,7 +1172,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
        LISTENERS
        ========================= */
 
-    // QR color
     colorPicker?.addEventListener("input", () => {
       if (colorHex) colorHex.value = colorPicker.value.toUpperCase();
       updateQr(false);
@@ -1179,7 +1183,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       updateQr(false);
     });
 
-    // Background color
     bgColorPicker?.addEventListener("input", () => {
       const bg = clampHexWithDefault(bgColorPicker?.value, "#FFFFFF");
       if (bgColorHex) bgColorHex.value = bg;
@@ -1246,7 +1249,6 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       if (capBgPicker) capBgPicker.value = v;
       updateQr(false);
     });
-
 
     // Logo panel toggle
     logoToggle?.addEventListener("click", () => {
@@ -1426,7 +1428,8 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
     renderFields();
     updateQr(true);
 
-    initSimpleCollapsibles(); document
+    initSimpleCollapsibles();
+    document
       .getElementById("previewReset")
       ?.addEventListener("click", resetAll);
   };

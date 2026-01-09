@@ -933,7 +933,7 @@ body.cookie-open {
 
 /* Location */
 .locationMap {
-  margin-top: 6px;
+  margin-top: 12px;
   border-radius: var(--radius2);
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
@@ -1129,12 +1129,16 @@ body.cookie-open {
   object-fit: cover;
   display: block;
   transform: scale(1);
-  transition: transform .22s ease;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .qrappCard:hover .qrappCard__img,
 .qrappCard:focus-visible .qrappCard__img {
   transform: scale(1.06);
+}
+
+.qrappCard__img {
+  will-change: transform;
 }
 
 /* Top navigation */
@@ -2006,7 +2010,32 @@ textarea.input-error {
     padding: 26px 0 24px;
   }
 }
-
 body.nav-open {
+  position: fixed;
+  width: 100%;
   overflow: hidden;
+}
+
+.locationResults {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.locationResults .prefooter__link {
+  justify-content: flex-start;
+}
+
+#locationResults:empty {
+  display: none;
+}
+
+#locationResults {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+#locationResults .prefooter__link {
+  justify-content: flex-start;
 }

@@ -13,36 +13,60 @@
 </head>
 
 <body>
-    <header class="topbar">
-        <div class="container topbar__inner">
-            <div class="brand">
-                <a href="/" class="brand__logo" aria-label="Go to homepage">QR</a>
-                <div>
-                    <div class="brand__name">Free QR Code Generator</div>
-                    <div class="brand__sub">Static QR codes. No expiry.</div>
-                </div>
-            </div>
+  <header class="topbar">
+    <div class="container topbar__inner">
 
-            <nav class="topnav" aria-label="Top navigation">
-                <details class="topnav__mobile">
-                    <summary class="topnav__toggle">Menu</summary>
-                    <div class="topnav__panel">
-                        <a class="topnav__link" href="./about.html">About</a>
-                        <a class="topnav__link" href="./qr-applications.html">QR applications</a>
-                        <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
-                        <a class="topnav__link" href="./contact.html">Contact</a>
-                    </div>
-                </details>
-
-                <div class="topnav__desktop">
-                    <a class="topnav__link" href="./about.html">About</a>
-                    <a class="topnav__link" href="./qr-applications.html">QR applications</a>
-                    <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
-                    <a class="topnav__link" href="./contact.html">Contact</a>
-                </div>
-            </nav>
+      <div class="brand">
+        <a href="/" class="brand__logo" aria-label="Go to homepage">QR</a>
+        <div>
+          <div class="brand__name">Free QR Code Generator</div>
+          <div class="brand__sub">Static QR codes. No expiry.</div>
         </div>
-    </header>
+      </div>
+
+      <!-- Top navigation -->
+      <nav class="topnav" aria-label="Top navigation">
+        <!-- Mobile menu -->
+        <details class="topnav__mobile" id="mobileNav">
+          <summary class="topnav__toggle" aria-label="Open menu">
+            <span class="topnav__hamburger" aria-hidden="true"></span>
+          </summary>
+
+          <div class="topnav__panel" role="dialog" aria-label="Site menu">
+            <div class="topnav__overlayInner container">
+              <div class="topnav__overlayHeader">
+                <a href="/" class="brand brand--overlay" aria-label="Go to homepage">
+                  <span class="brand__logo" aria-hidden="true">QR</span>
+                  <span class="brand__text">
+                    <span class="brand__name">Free QR Code Generator</span>
+                    <span class="brand__sub">Static QR codes. No expiry.</span>
+                  </span>
+                </a>
+
+                <button type="button" class="topnav__close" aria-label="Close menu">✕</button>
+              </div>
+
+              <div class="topnav__overlayLinks">
+                <a class="topnav__link" href="./about.html">About</a>
+                <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+                <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                <a class="topnav__link" href="./contact.html">Contact</a>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Desktop links -->
+        <div class="topnav__desktop">
+          <a class="topnav__link" href="./about.html">About</a>
+          <a class="topnav__link" href="./qr-applications.html">QR applications</a>
+          <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+          <a class="topnav__link" href="./contact.html">Contact</a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
 
     <main class="container">
         <section class="menu">
@@ -94,7 +118,7 @@
         <div class="container footer">
             <div class="footer__inner">
                 <div class="footer__left muted small">
-                    © 2026 free-online-qr.com. Made with ❤️ in the Netherlands
+                    © 2026 free-online-qr.com. Made with ❤️ in NL
                 </div>
                 <div class="footer__right">
                     <a class="footer__link" href="./privacy.html">Privacy Statement</a>
@@ -124,6 +148,5 @@
 
     <script src="./cookies.js" defer></script>
 </body>
-
 
 </html>
