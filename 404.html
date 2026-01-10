@@ -2,14 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page not found (404) - Free QR Code Generator</title>
-    <link rel="canonical" href="https://www.free-online-qr.com/" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found (404) - Free QR Code Generator</title>
+  <link rel="canonical" href="https://www.free-online-qr.com/404.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./cookies.js" defer></script>
+  <script src="./theme.js" defer></script>
+
 </head>
 
 <body>
@@ -26,6 +29,11 @@
 
       <!-- Top navigation -->
       <nav class="topnav" aria-label="Top navigation">
+
+        <button class="pill" type="button" id="themeToggle" aria-label="Toggle light/dark mode">
+          🌙
+        </button>
+
         <!-- Mobile menu -->
         <details class="topnav__mobile" id="mobileNav">
           <summary class="topnav__toggle" aria-label="Open menu">
@@ -63,91 +71,93 @@
           <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
           <a class="topnav__link" href="./contact.html">Contact</a>
         </div>
+
       </nav>
 
     </div>
   </header>
 
-    <main class="container">
-        <section class="menu">
-            <h1 class="h1">This page can’t be found</h1>
-            <p class="muted">
-                The link may be broken, or the page may have been moved.
-            </p>
-        </section>
-
-        <section class="notfoundWrap">
-            <div class="panel notfoundCard">
-                <div class="sparkles" aria-hidden="true">
-                    <span class="sparkle"></span>
-                    <span class="sparkle"></span>
-                    <span class="sparkle"></span>
-                    <span class="sparkle"></span>
-                    <span class="sparkle"></span>
-                    <span class="sparkle"></span>
-                </div>
-
-                <div class="notfoundGrid">
-                    <div class="qrScene" aria-hidden="true">
-                        <div class="qrFrame">
-                            <div class="qrGrid"></div>
-                            <div class="scanGlow"></div>
-                            <div class="scanLine"></div>
-                        </div>
-                    </div>
-    </main>
-
-    <!-- Buy me a coffee -->
-    <section class="coffee">
-        <div class="container coffee__inner">
-            <div class="coffee__left">
-                <span class="coffee__icon" aria-hidden="true">☕</span>
-                <span class="coffee__text">
-                    If this tool helped you, consider buying me a coffee
-                </span>
-            </div>
-
-            <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
-                Buy Me a Coffee
-            </a>
-        </div>
+  <main class="container">
+    <section class="menu">
+      <h1 class="h1">This page can’t be found</h1>
+      <p class="muted">
+        The link may be broken, or the page may have been moved.
+      </p>
     </section>
 
-    <!-- Footer -->
-    <footer class="footerbar" role="contentinfo">
-        <div class="container footer">
-            <div class="footer__inner">
-                <div class="footer__left muted small">
-                    © 2026 free-online-qr.com. Made with ❤️ in NL
-                </div>
-                <div class="footer__right">
-                    <a class="footer__link" href="./privacy.html">Privacy Statement</a>
-                    <a class="footer__link" href="./terms.html">Terms of Use</a>
-                    <a class="footer__link" href="./cookies.html">Cookie Policy</a>
-                </div>
-            </div>
+    <section class="notfoundWrap">
+      <div class="panel notfoundCard">
+        <div class="sparkles" aria-hidden="true">
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
+          <span class="sparkle"></span>
         </div>
-    </footer>
 
-    <!-- Cookie consent banner -->
-    <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
-    <div class="cookiebar" id="cookiebar" hidden>
-        <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
-            <div class="cookiebar__text">
-                We use cookies for analytics to understand site usage.
-                See the <a href="./privacy.html">Privacy Statement</a> and
-                <a href="./cookies.html">Cookie Policy</a>.
+        <div class="notfoundGrid">
+          <div class="qrScene" aria-hidden="true">
+            <div class="qrFrame">
+              <div class="qrGrid"></div>
+              <div class="scanGlow"></div>
+              <div class="scanLine"></div>
             </div>
+          </div>
+  </main>
 
-            <div class="cookiebar__actions">
-                <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
-                <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
-            </div>
-        </div>
+  <!-- Buy me a coffee -->
+  <section class="coffee">
+    <div class="container coffee__inner">
+      <div class="coffee__left">
+        <span class="coffee__icon" aria-hidden="true">☕</span>
+        <span class="coffee__text">
+          If this tool helped you, consider buying me a coffee
+        </span>
+      </div>
+
+      <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+        Buy Me a Coffee
+      </a>
     </div>
+  </section>
 
-    <script src="./cookies.js" defer></script>
-    <script src="./bundle.js"></script>
+  <!-- Footer -->
+  <footer class="footerbar" role="contentinfo">
+    <div class="container footer">
+      <div class="footer__inner">
+        <div class="footer__left muted small">
+          © 2026 free-online-qr.com. Made with ❤️ in NL
+        </div>
+        <div class="footer__right">
+          <a class="footer__link" href="./privacy.html">Privacy Statement</a>
+          <a class="footer__link" href="./terms.html">Terms of Use</a>
+          <a class="footer__link" href="./cookies.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie consent banner -->
+  <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
+  <div class="cookiebar" id="cookiebar" hidden>
+    <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
+      <div class="cookiebar__text">
+        We use cookies for analytics to understand site usage.
+        See the <a href="./privacy.html">Privacy Statement</a> and
+        <a href="./cookies.html">Cookie Policy</a>.
+      </div>
+
+      <div class="cookiebar__actions">
+        <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
+        <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./bundle.js"></script>
+
 </body>
 
 </html>

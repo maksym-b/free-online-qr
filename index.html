@@ -10,6 +10,9 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css" />
+  <script src="./cookies.js" defer></script>
+  <script src="./theme.js" defer></script>
+
 </head>
 
 <body>
@@ -26,6 +29,11 @@
 
       <!-- Top navigation -->
       <nav class="topnav" aria-label="Top navigation">
+
+        <button class="pill" type="button" id="themeToggle" aria-label="Toggle light/dark mode">
+          🌙
+        </button>
+
         <!-- Mobile menu -->
         <details class="topnav__mobile" id="mobileNav">
           <summary class="topnav__toggle" aria-label="Open menu">
@@ -63,6 +71,7 @@
           <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
           <a class="topnav__link" href="./contact.html">Contact</a>
         </div>
+
       </nav>
 
     </div>
@@ -229,13 +238,12 @@
               </div>
             </div>
           </div>
-      
+
         </div>
       </div>
     </section>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.6.0/lib/qr-code-styling.js"></script>
-
   <script src="./bundle.js"></script>
   <!-- Buy me a coffee -->
   <section class="coffee">
@@ -286,7 +294,6 @@
       </div>
     </div>
   </div>
-  <script src="./cookies.js" defer></script>
 </body>
 
 </html>

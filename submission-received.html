@@ -2,14 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Submission received - Free QR Code Generator</title>
-    <link rel="canonical" href="https://www.free-online-qr.com/" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="./styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submission received - Free QR Code Generator</title>
+  <link rel="canonical" href="https://www.free-online-qr.com/submission.received.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="./cookies.js" defer></script>
+  <script src="./theme.js" defer></script>
+
 </head>
 
 <body>
@@ -26,6 +29,11 @@
 
       <!-- Top navigation -->
       <nav class="topnav" aria-label="Top navigation">
+
+        <button class="pill" type="button" id="themeToggle" aria-label="Toggle light/dark mode">
+          🌙
+        </button>
+
         <!-- Mobile menu -->
         <details class="topnav__mobile" id="mobileNav">
           <summary class="topnav__toggle" aria-label="Open menu">
@@ -63,6 +71,7 @@
           <a class="topnav__link" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
           <a class="topnav__link" href="./contact.html">Contact</a>
         </div>
+
       </nav>
 
     </div>
@@ -96,7 +105,9 @@
       </div>
     </section>
   </main>
-
+  
+    <script src="./bundle.js"></script>
+    
   <!-- Buy me a coffee -->
   <section class="coffee">
     <div class="container coffee__inner">
@@ -146,8 +157,6 @@
     </div>
   </div>
 
-  <script src="./cookies.js" defer></script>
-  <script src="./bundle.js"></script>
 </body>
 
 </html>
