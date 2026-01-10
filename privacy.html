@@ -1,263 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Statement - Free QR Code Generator</title>
-    <link rel="canonical" href="https://www.free-online-qr.com/privacy.html" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./cookies.js" defer></script>
-    <script src="./theme.js" defer></script>
-    <script src="./mobile.js" defer></script>
-    <script src="./i18n.js" defer></script>
-
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Statement - Free QR Code Generator</title>
+<link href="https://www.free-online-qr.com/privacy.html" rel="canonical"/>
+<link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="./styles.css" rel="stylesheet">
+<script defer="" src="./cookies.js"></script>
+<script defer="" src="./theme.js"></script>
+<script defer="" src="./mobile.js"></script>
+<script defer="" src="./i18n.js"></script>
+</link></head>
 <body>
-    <header class="topbar">
-        <div class="container topbar__inner">
-
-            <div class="brand">
-                <a href="/" class="brand__logo" aria-label="Go to homepage">QR</a>
-                <div>
-                    <div class="brand__name">Free QR Code Generator</div>
-                    <div class="brand__sub">Static QR codes. No expiry.</div>
-                </div>
-            </div>
-
-            <nav class="topnav" aria-label="Top navigation">
-
-                <!-- Desktop links -->
-                <div class="topnav__desktop">
-                    <a class="topnav__link" href="./about.html" data-i18n="nav.about">About</a>
-                    <a class="topnav__link" href="./qr-applications.html" data-i18n="nav.qrApplications">QR
+<header class="topbar">
+<div class="container topbar__inner">
+<div class="brand">
+<a aria-label="Go to homepage" class="brand__logo" href="/">QR</a>
+<div>
+<div class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</div>
+<div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
+</div>
+</div>
+<nav aria-label="Top navigation" class="topnav">
+<!-- Desktop links -->
+<div class="topnav__desktop">
+<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
                         applications</a>
-                    <a class="topnav__link" href="./static-vs-dynamic-qr.html" data-i18n="nav.staticVsDynamic">Static vs
+<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
                         dynamic QR</a>
-                    <a class="topnav__link" href="./contact.html" data-i18n="nav.contact">Contact</a>
-                </div>
-
-                <!-- Actions (desktop) -->
-                <div class="topnav__actions">
-                    <div class="topnav__prefs" aria-label="Preferences">
-                        <button class="pill" type="button" id="themeToggle" data-i18n-attr="aria-label:aria.themeToggle"
-                            aria-label="Toggle light/dark mode">🌙</button>
-
-                        <div class="lang-inline" role="group" aria-label="Select language">
-                            <button type="button" class="lang-inline__btn" data-lang="en"
-                                aria-label="English">EN</button>
-                            <span class="lang-inline__sep" aria-hidden="true">|</span>
-                            <button type="button" class="lang-inline__btn" data-lang="nl"
-                                aria-label="Nederlands">NL</button>
-                        </div>
-                    </div>
-
-                    <!-- Mobile menu -->
-                    <details class="topnav__mobile" id="mobileNav">
-                        <summary class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu"
-                            aria-label="Open menu">
-                            <span class="topnav__hamburger" aria-hidden="true"></span>
-                        </summary>
-
-                        <div class="topnav__panel" role="dialog" data-i18n-attr="aria-label:aria.siteMenu"
-                            aria-label="Site menu">
-                            <div class="topnav__overlayInner container">
-
-                                <div class="topnav__overlayHeader">
-                                    <a href="/" class="brand brand--overlay" aria-label="Go to homepage">
-                                        <span class="brand__logo" aria-hidden="true">QR</span>
-                                        <span class="brand__text">
-                                            <span class="brand__name">Free QR Code Generator</span>
-                                            <span class="brand__sub">Static QR codes. No expiry.</span>
-                                        </span>
-                                    </a>
-
-                                    <button type="button" class="topnav__close"
-                                        data-i18n-attr="aria-label:aria.closeMenu" aria-label="Close menu">✕</button>
-                                </div>
-
-                                <!-- Mobile-open -->
-                                <div class="topnav__overlayPrefs" aria-label="Preferences">
-                                    <button class="pill" type="button" data-theme-toggle
-                                        data-i18n-attr="aria-label:aria.themeToggle"
-                                        aria-label="Toggle light/dark mode">🌙</button>
-
-                                    <div class="lang-inline" role="group" aria-label="Select language">
-                                        <button type="button" class="lang-inline__btn" data-lang="en"
-                                            aria-label="English">EN</button>
-                                        <span class="lang-inline__sep" aria-hidden="true">|</span>
-                                        <button type="button" class="lang-inline__btn" data-lang="nl"
-                                            aria-label="Nederlands">NL</button>
-                                    </div>
-                                </div>
-
-                                <div class="topnav__overlayLinks">
-                                    <a class="topnav__link" href="./about.html" data-i18n="nav.about">About</a>
-                                    <a class="topnav__link" href="./qr-applications.html"
-                                        data-i18n="nav.qrApplications">QR applications</a>
-                                    <a class="topnav__link" href="./static-vs-dynamic-qr.html"
-                                        data-i18n="nav.staticVsDynamic">Static vs dynamic QR</a>
-                                    <a class="topnav__link" href="./contact.html" data-i18n="nav.contact">Contact</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </details>
-                </div>
-
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="menu">
-            <h1 class="h1">Privacy Statement</h1>
-            <p class="muted">How we handle data when you use this website.</p>
-        </section>
-
-        <section class="legal">
-            <p class="small muted">Last updated: January 4, 2026</p>
-
-            <h2 class="h2">Overview</h2>
-            <p>
+<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+</div>
+<!-- Actions (desktop) -->
+<div class="topnav__actions">
+<div aria-label="Preferences" class="topnav__prefs">
+<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">🌙</button>
+<div aria-label="Select language" class="lang-inline" role="group">
+<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+<span aria-hidden="true" class="lang-inline__sep">|</span>
+<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
+</div>
+</div>
+<!-- Mobile menu -->
+<details class="topnav__mobile" id="mobileNav">
+<summary aria-label="Open menu" class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu">
+<span aria-hidden="true" class="topnav__hamburger"></span>
+</summary>
+<div aria-label="Site menu" class="topnav__panel" data-i18n-attr="aria-label:aria.siteMenu" role="dialog">
+<div class="topnav__overlayInner container">
+<div class="topnav__overlayHeader">
+<a aria-label="Go to homepage" class="brand brand--overlay" href="/">
+<span aria-hidden="true" class="brand__logo">QR</span>
+<span class="brand__text">
+<span class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</span>
+<span class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</span>
+</span>
+</a>
+<button aria-label="Close menu" class="topnav__close" data-i18n-attr="aria-label:aria.closeMenu" type="button">✕</button>
+</div>
+<!-- Mobile-open -->
+<div aria-label="Preferences" class="topnav__overlayPrefs">
+<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" data-theme-toggle="" type="button">🌙</button>
+<div aria-label="Select language" class="lang-inline" role="group">
+<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+<span aria-hidden="true" class="lang-inline__sep">|</span>
+<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
+</div>
+</div>
+<div class="topnav__overlayLinks">
+<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR applications</a>
+<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+</div>
+</div>
+</div>
+</details>
+</div>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="menu">
+<h1 class="h1" data-i18n="privacy.h1">Privacy Statement</h1>
+<p class="muted" data-i18n="privacy.subtitle">How we handle data when you use this website.</p>
+</section>
+<section class="legal">
+<p class="small muted" data-i18n="privacy.lastUpdated">Last updated: January 4, 2026</p>
+<h2 class="h2" data-i18n="privacy.h2.overview">Overview</h2>
+<p>
                 This website provides a free QR code generator that runs entirely in your browser.
                 We aim to minimize data collection and to be transparent about how information is processed.
             </p>
-
-            <p>
+<p>
                 QR codes are generated client-side. The content you enter into the generator is not
                 automatically transmitted to or stored by us.
             </p>
-
-            <p>
+<p data-i18n="privacy.p.overview.3">
                 Analytics are used only to understand general site usage and only after you give consent.
             </p>
-
-            <h2 class="h2">Who we are</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.who_we_are">Who we are</h2>
+<p>
                 We operate this website to provide tools for creating static QR codes.
                 If you have questions about this Privacy Statement or how data is handled,
-                please use the <a href="./contact.html">Contact</a> page.
+                please use the <a data-i18n="cookies.h2.contact" href="./contact.html">Contact</a> page.
             </p>
-
-            <h2 class="h2">QR code data</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.qr_code_data">QR code data</h2>
+<p>
                 Information entered into the QR generator, such as website URLs, text, Wi-Fi credentials,
                 or vCard details, is processed locally in your browser to generate a QR code.
                 We do not receive this information as part of normal operation.
             </p>
-
-            <h2 class="h2">Contact form</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.contact_form">Contact form</h2>
+<p>
                 When you submit the contact form, the information you provide is used solely to respond
                 to your inquiry. Contact messages are not used for marketing or profiling.
             </p>
-
-            <p>
+<p>
                 This Privacy Statement will be updated when backend processing is introduced,
                 including details on transmission and retention.
             </p>
-
-            <h2 class="h2">Hosting and security</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.hosting_and_security">Hosting and security</h2>
+<p>
                 The website is hosted on Cloudflare Pages. Cloudflare may process limited technical data,
                 such as IP address and request metadata, to deliver content securely and to protect
                 against malicious traffic.
             </p>
-
-            <h2 class="h2">Cookies and analytics</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.cookies_and_analytics">Cookies and analytics</h2>
+<p>
                 Cookies are used only for analytics purposes and only if you choose to accept them.
                 Analytics help us understand aggregated usage, such as page views and device types.
             </p>
-
-            <p>
-                You can find more information in the <a href="./cookies.html">Cookie Policy</a>
+<p>
+                You can find more information in the <a data-i18n="home.cookie.text.cookies" href="./cookies.html">Cookie Policy</a>
                 and manage your preferences at any time via Cookie settings in the footer.
             </p>
-
-            <h2 class="h2">Legal basis</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.legal_basis">Legal basis</h2>
+<p>
                 Analytics data is processed based on your consent. Technical data required to operate
                 and secure the website is processed based on legitimate interests.
                 Contact form data is processed to respond to your request.
             </p>
-
-            <h2 class="h2">Your rights</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.your_rights">Your rights</h2>
+<p>
                 Depending on your location, you may have rights to access, correct, or delete your data,
                 and to withdraw consent for analytics at any time.
-                Requests can be made via the <a href="./contact.html">Contact</a> page.
+                Requests can be made via the <a data-i18n="cookies.h2.contact" href="./contact.html">Contact</a> page.
             </p>
-
-            <h2 class="h2">Children</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.children">Children</h2>
+<p>
                 This website is not intended for children under the age of 16,
                 and we do not knowingly collect personal data from children.
             </p>
-
-            <h2 class="h2">Changes to this statement</h2>
-            <p>
+<h2 class="h2" data-i18n="privacy.h2.changes_to_this_statement">Changes to this statement</h2>
+<p>
                 We may update this Privacy Statement from time to time.
                 Any changes will be reflected by the Last updated date at the top of this page.
             </p>
-        </section>
-    </main>
-
-    <!-- Buy me a coffee -->
-    <section class="coffee">
-        <div class="container coffee__inner">
-            <div class="coffee__left">
-                <span class="coffee__icon" aria-hidden="true">☕</span>
-                <span class="coffee__text">
+</section>
+</main>
+<!-- Buy me a coffee -->
+<section class="coffee">
+<div class="container coffee__inner">
+<div class="coffee__left">
+<span aria-hidden="true" class="coffee__icon">☕</span>
+<span class="coffee__text" data-i18n="coffee.text">
                     If this tool helped you, consider buying me a coffee
                 </span>
-            </div>
-
-            <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+</div>
+<a class="coffee__btn" data-i18n="coffee.btn" href="https://buymeacoffee.com/webevangelist" rel="noopener" target="_blank">
                 Buy Me a Coffee
             </a>
-        </div>
-    </section>
-
-    <!-- Footer bar -->
-    <footer class="footerbar" role="contentinfo" id="footerbar">
-        <div class="container footer">
-            <div class="footer__inner">
-                <div class="footer__left muted small">
+</div>
+</section>
+<!-- Footer bar -->
+<footer class="footerbar" id="footerbar" role="contentinfo">
+<div class="container footer">
+<div class="footer__inner">
+<div class="footer__left muted small" data-i18n="home.footer.made">
                     © 2026 free-online-qr.com. Made with ❤️ in NL
                 </div>
-
-                <div class="footer__right">
-                    <a class="footer__link" href="./privacy.html">Privacy Statement</a>
-                    <a class="footer__link" href="./terms.html">Terms of Use</a>
-                    <a class="footer__link" href="./cookies.html">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cookie consent banner -->
-    <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
-    <div class="cookiebar" id="cookiebar" hidden>
-        <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
-            <div class="cookiebar__text">
+<div class="footer__right">
+<a class="footer__link" data-i18n="footer.privacy" href="./privacy.html">Privacy Statement</a>
+<a class="footer__link" data-i18n="footer.terms" href="./terms.html">Terms of Use</a>
+<a class="footer__link" data-i18n="footer.cookies" href="./cookies.html">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Cookie consent banner -->
+<div class="cookiebackdrop" hidden="" id="cookiebackdrop"></div>
+<div class="cookiebar" hidden="" id="cookiebar">
+<div aria-label="Cookie consent" class="container cookiebar__inner" data-i18n-attr="aria-label:aria.cookieConsent" role="dialog">
+<div class="cookiebar__text">
                 We use cookies for analytics to understand site usage.
-                See the <a href="./privacy.html">Privacy Statement</a> and
-                <a href="./cookies.html">Cookie Policy</a>.
+                See the <a data-i18n="privacy.h1" href="./privacy.html">Privacy Statement</a> and
+                <a data-i18n="home.cookie.text.cookies" href="./cookies.html">Cookie Policy</a>.
             </div>
-
-            <div class="cookiebar__actions">
-                <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
-                <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
-            </div>
-        </div>
-    </div>
-
+<div class="cookiebar__actions">
+<button class="btn btn--small btn--ghost" data-i18n="cookie.reject" id="cookieReject" type="button">Reject</button>
+<button class="btn btn--small" data-i18n="cookie.accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
 </body>
-
 </html>

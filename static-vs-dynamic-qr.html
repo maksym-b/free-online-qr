@@ -1,277 +1,216 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Static vs Dynamic QR codes - Free QR Code Generator</title>
-    <link rel="canonical" href="https://www.free-online-qr.com/static-vs-dynamic-qr.html" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="./cookies.js" defer></script>
-    <script src="./theme.js" defer></script>
-    <script src="./mobile.js" defer></script>
-    <script src="./i18n.js" defer></script>
-
-
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Static vs Dynamic QR codes - Free QR Code Generator</title>
+<link href="https://www.free-online-qr.com/static-vs-dynamic-qr.html" rel="canonical"/>
+<link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="./styles.css" rel="stylesheet">
+<script defer="" src="./cookies.js"></script>
+<script defer="" src="./theme.js"></script>
+<script defer="" src="./mobile.js"></script>
+<script defer="" src="./i18n.js"></script>
+</link></head>
 <body>
-    <header class="topbar">
-        <div class="container topbar__inner">
-
-            <div class="brand">
-                <a href="/" class="brand__logo" aria-label="Go to homepage">QR</a>
-                <div>
-                    <div class="brand__name">Free QR Code Generator</div>
-                    <div class="brand__sub">Static QR codes. No expiry.</div>
-                </div>
-            </div>
-
-            <nav class="topnav" aria-label="Top navigation">
-
-                <!-- Desktop links -->
-                <div class="topnav__desktop">
-                    <a class="topnav__link" href="./about.html" data-i18n="nav.about">About</a>
-                    <a class="topnav__link" href="./qr-applications.html" data-i18n="nav.qrApplications">QR
+<header class="topbar">
+<div class="container topbar__inner">
+<div class="brand">
+<a aria-label="Go to homepage" class="brand__logo" href="/">QR</a>
+<div>
+<div class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</div>
+<div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
+</div>
+</div>
+<nav aria-label="Top navigation" class="topnav">
+<!-- Desktop links -->
+<div class="topnav__desktop">
+<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
                         applications</a>
-                    <a class="topnav__link" href="./static-vs-dynamic-qr.html" data-i18n="nav.staticVsDynamic">Static vs
+<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
                         dynamic QR</a>
-                    <a class="topnav__link" href="./contact.html" data-i18n="nav.contact">Contact</a>
-                </div>
-
-                <!-- Actions (desktop) -->
-                <div class="topnav__actions">
-                    <div class="topnav__prefs" aria-label="Preferences">
-                        <button class="pill" type="button" id="themeToggle" data-i18n-attr="aria-label:aria.themeToggle"
-                            aria-label="Toggle light/dark mode">🌙</button>
-
-                        <div class="lang-inline" role="group" aria-label="Select language">
-                            <button type="button" class="lang-inline__btn" data-lang="en"
-                                aria-label="English">EN</button>
-                            <span class="lang-inline__sep" aria-hidden="true">|</span>
-                            <button type="button" class="lang-inline__btn" data-lang="nl"
-                                aria-label="Nederlands">NL</button>
-                        </div>
-                    </div>
-
-                    <!-- Mobile menu -->
-                    <details class="topnav__mobile" id="mobileNav">
-                        <summary class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu"
-                            aria-label="Open menu">
-                            <span class="topnav__hamburger" aria-hidden="true"></span>
-                        </summary>
-
-                        <div class="topnav__panel" role="dialog" data-i18n-attr="aria-label:aria.siteMenu"
-                            aria-label="Site menu">
-                            <div class="topnav__overlayInner container">
-
-                                <div class="topnav__overlayHeader">
-                                    <a href="/" class="brand brand--overlay" aria-label="Go to homepage">
-                                        <span class="brand__logo" aria-hidden="true">QR</span>
-                                        <span class="brand__text">
-                                            <span class="brand__name">Free QR Code Generator</span>
-                                            <span class="brand__sub">Static QR codes. No expiry.</span>
-                                        </span>
-                                    </a>
-
-                                    <button type="button" class="topnav__close"
-                                        data-i18n-attr="aria-label:aria.closeMenu" aria-label="Close menu">✕</button>
-                                </div>
-
-                                <!-- Mobile-open -->
-                                <div class="topnav__overlayPrefs" aria-label="Preferences">
-                                    <button class="pill" type="button" data-theme-toggle
-                                        data-i18n-attr="aria-label:aria.themeToggle"
-                                        aria-label="Toggle light/dark mode">🌙</button>
-
-                                    <div class="lang-inline" role="group" aria-label="Select language">
-                                        <button type="button" class="lang-inline__btn" data-lang="en"
-                                            aria-label="English">EN</button>
-                                        <span class="lang-inline__sep" aria-hidden="true">|</span>
-                                        <button type="button" class="lang-inline__btn" data-lang="nl"
-                                            aria-label="Nederlands">NL</button>
-                                    </div>
-                                </div>
-
-                                <div class="topnav__overlayLinks">
-                                    <a class="topnav__link" href="./about.html" data-i18n="nav.about">About</a>
-                                    <a class="topnav__link" href="./qr-applications.html"
-                                        data-i18n="nav.qrApplications">QR
+<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+</div>
+<!-- Actions (desktop) -->
+<div class="topnav__actions">
+<div aria-label="Preferences" class="topnav__prefs">
+<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">🌙</button>
+<div aria-label="Select language" class="lang-inline" role="group">
+<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+<span aria-hidden="true" class="lang-inline__sep">|</span>
+<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
+</div>
+</div>
+<!-- Mobile menu -->
+<details class="topnav__mobile" id="mobileNav">
+<summary aria-label="Open menu" class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu">
+<span aria-hidden="true" class="topnav__hamburger"></span>
+</summary>
+<div aria-label="Site menu" class="topnav__panel" data-i18n-attr="aria-label:aria.siteMenu" role="dialog">
+<div class="topnav__overlayInner container">
+<div class="topnav__overlayHeader">
+<a aria-label="Go to homepage" class="brand brand--overlay" href="/">
+<span aria-hidden="true" class="brand__logo">QR</span>
+<span class="brand__text">
+<span class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</span>
+<span class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</span>
+</span>
+</a>
+<button aria-label="Close menu" class="topnav__close" data-i18n-attr="aria-label:aria.closeMenu" type="button">✕</button>
+</div>
+<!-- Mobile-open -->
+<div aria-label="Preferences" class="topnav__overlayPrefs">
+<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" data-theme-toggle="" type="button">🌙</button>
+<div aria-label="Select language" class="lang-inline" role="group">
+<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+<span aria-hidden="true" class="lang-inline__sep">|</span>
+<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
+</div>
+</div>
+<div class="topnav__overlayLinks">
+<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
                                         applications</a>
-                                    <a class="topnav__link" href="./static-vs-dynamic-qr.html"
-                                        data-i18n="nav.staticVsDynamic">Static vs
+<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
                                         dynamic QR</a>
-                                    <a class="topnav__link" href="./contact.html" data-i18n="nav.contact">Contact</a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </details>
-                </div>
-
-            </nav>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="menu">
-            <h1 class="h1">Static vs Dynamic QR Codes</h1>
-            <p class="muted">A simple guide to help you choose the right type for your use case.</p>
-        </section>
-
-        <section class="legal">
-
-            <h2 class="h2">Using this website</h2>
-            <p>
+<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+</div>
+</div>
+</div>
+</details>
+</div>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="menu">
+<h1 class="h1" data-i18n="staticVsDynamic.h1">Static vs Dynamic QR Codes</h1>
+<p class="muted" data-i18n="staticVsDynamic.subtitle">A simple guide to help you choose the right type for your use case.</p>
+</section>
+<section class="legal">
+<h2 class="h2" data-i18n="staticVsDynamic.h2.using">Using this website</h2>
+<p>
                 This website generates static QR codes. They run in your browser and do not expire.
                 If you need a dynamic QR code, you can use a dedicated dynamic QR provider or set up your own redirect
                 link.
             </p>
-
-            <h2 class="h2">What is a static QR code?</h2>
-            <p>
+<h2 class="h2" data-i18n="staticVsDynamic.h2.staticWhat">What is a static QR code?</h2>
+<p>
                 A static QR code contains the final information inside the code itself. For example, if you create a QR
                 code
                 for https://example.com, that exact link is encoded in the QR code.
             </p>
-
-            <p>
+<p>
                 Once printed or shared, a static QR code cannot be changed. If you need to update the link or content,
                 you must create a new QR code and replace the old one.
             </p>
-
-            <h2 class="h2">What is a dynamic QR code?</h2>
-            <p>
+<h2 class="h2" data-i18n="staticVsDynamic.h2.dynamicWhat">What is a dynamic QR code?</h2>
+<p>
                 A dynamic QR code usually stores a short redirect link instead of the final destination.
                 When someone scans it, they first open the redirect, and then they are sent to the final destination.
             </p>
-
-            <p>
+<p>
                 Because the destination is managed on a server, you can change where the QR code points later without
                 changing the QR image. Many dynamic QR services also provide scan analytics.
             </p>
-
-            <!-- Illustration placeholder -->
-            <div class="mediaPlaceholder" aria-label="Illustration placeholder" role="img"></div>
-
-            <section class="qrCompare">
-                <h2 class="h2">Main differences</h2>
-
-                <div class="qrCompareTable" role="table" aria-label="Static vs Dynamic QR comparison">
-                    <div class="qrCompareTable__head" role="row">
-                        <div class="qrCompareTable__cell qrCompareTable__feature" role="columnheader">Feature</div>
-                        <div class="qrCompareTable__cell qrCompareTable__colhead" role="columnheader">Static QR</div>
-                        <div class="qrCompareTable__cell qrCompareTable__colhead" role="columnheader">Dynamic QR</div>
-                    </div>
-
-                    <div class="qrCompareTable__row" role="row">
-                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Can you change the
+<!-- Illustration placeholder -->
+<div aria-label="Illustration placeholder" class="mediaPlaceholder" role="img"></div>
+<section class="qrCompare">
+<h2 class="h2" data-i18n="staticVsDynamic.h2.differences">Main differences</h2>
+<div aria-label="Static vs Dynamic QR comparison" class="qrCompareTable" role="table">
+<div class="qrCompareTable__head" role="row">
+<div class="qrCompareTable__cell qrCompareTable__feature" data-i18n="staticVsDynamic.table.feature" role="columnheader">Feature</div>
+<div class="qrCompareTable__cell qrCompareTable__colhead" data-i18n="staticVsDynamic.table.static" role="columnheader">Static QR</div>
+<div class="qrCompareTable__cell qrCompareTable__colhead" data-i18n="staticVsDynamic.table.dynamic" role="columnheader">Dynamic QR</div>
+</div>
+<div class="qrCompareTable__row" role="row">
+<div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Can you change the
                             destination later?</div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--no"
-                                aria-label="No">✕</span></div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
-                                aria-label="Yes">✓</span></div>
-                    </div>
-
-                    <div class="qrCompareTable__row" role="row">
-                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Built-in scan analytics
+<div class="qrCompareTable__cell" role="cell"><span aria-label="No" class="mark mark--no">✕</span></div>
+<div class="qrCompareTable__cell" role="cell"><span aria-label="Yes" class="mark mark--yes">✓</span></div>
+</div>
+<div class="qrCompareTable__row" role="row">
+<div class="qrCompareTable__cell qrCompareTable__feature" data-i18n="staticVsDynamic.table.row.analytics" role="cell">Built-in scan analytics
                         </div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--no"
-                                aria-label="No">✕</span></div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
-                                aria-label="Yes">✓</span></div>
-                    </div>
-
-                    <div class="qrCompareTable__row" role="row">
-                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Works without a
+<div class="qrCompareTable__cell" role="cell"><span aria-label="No" class="mark mark--no">✕</span></div>
+<div class="qrCompareTable__cell" role="cell"><span aria-label="Yes" class="mark mark--yes">✓</span></div>
+</div>
+<div class="qrCompareTable__row" role="row">
+<div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Works without a
                             third-party service</div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
-                                aria-label="Yes">✓</span></div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--no"
-                                aria-label="No">✕</span></div>
-                    </div>
-
-                    <div class="qrCompareTable__row" role="row">
-                        <div class="qrCompareTable__cell qrCompareTable__feature" role="cell">Usually free long term
+<div class="qrCompareTable__cell" role="cell"><span aria-label="Yes" class="mark mark--yes">✓</span></div>
+<div class="qrCompareTable__cell" role="cell"><span aria-label="No" class="mark mark--no">✕</span></div>
+</div>
+<div class="qrCompareTable__row" role="row">
+<div class="qrCompareTable__cell qrCompareTable__feature" data-i18n="staticVsDynamic.table.row.freeLongTerm" role="cell">Usually free long term
                         </div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--yes"
-                                aria-label="Yes">✓</span></div>
-                        <div class="qrCompareTable__cell" role="cell"><span class="mark mark--maybe"
-                                aria-label="Sometimes">–</span></div>
-                    </div>
-
-                    <div class="qrCompareTable__note">
+<div class="qrCompareTable__cell" role="cell"><span aria-label="Yes" class="mark mark--yes">✓</span></div>
+<div class="qrCompareTable__cell" role="cell"><span aria-label="Sometimes" class="mark mark--maybe">–</span></div>
+</div>
+<div class="qrCompareTable__note" data-i18n="staticVsDynamic.table.note">
                         Dynamic QR codes often require a subscription for editing and analytics.
                     </div>
-                </div>
-            </section>
-
-            <h2 class="h2">Which one should you choose?</h2>
-            <p>
+</div>
+</section>
+<h2 class="h2" data-i18n="staticVsDynamic.h2.choose">Which one should you choose?</h2>
+<p>
                 Choose a static QR code if you want something simple, free, and reliable. Static QR codes are a good fit
                 for
                 permanent content such as a homepage, product information page, menu PDF, or Wi-Fi details that will not
                 change.
             </p>
-
-            <p>
+<p>
                 Choose a dynamic QR code if you plan to change the destination later or if you want scan analytics.
                 Dynamic QR codes are often used in marketing campaigns, printed ads, product packaging, and event
                 materials.
             </p>
-
-        </section>
-    </main>
-
-    <!-- Buy me a coffee -->
-    <section class="coffee">
-        <div class="container coffee__inner">
-            <div class="coffee__left">
-                <span class="coffee__icon" aria-hidden="true">☕</span>
-                <span class="coffee__text">If this guide helped you, consider buying me a coffee</span>
-            </div>
-            <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+</section>
+</main>
+<!-- Buy me a coffee -->
+<section class="coffee">
+<div class="container coffee__inner">
+<div class="coffee__left">
+<span aria-hidden="true" class="coffee__icon">☕</span>
+<span class="coffee__text" data-i18n="coffee.text">If this guide helped you, consider buying me a coffee</span>
+</div>
+<a class="coffee__btn" data-i18n="coffee.btn" href="https://buymeacoffee.com/webevangelist" rel="noopener" target="_blank">
                 Buy Me a Coffee
             </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footerbar" role="contentinfo" id="footerbar">
-        <div class="container footer">
-            <div class="footer__inner">
-                <div class="footer__left muted small">
+</div>
+</section>
+<!-- Footer -->
+<footer class="footerbar" id="footerbar" role="contentinfo">
+<div class="container footer">
+<div class="footer__inner">
+<div class="footer__left muted small" data-i18n="home.footer.made">
                     © 2026 free-online-qr.com. Made with ❤️ in NL
                 </div>
-                <div class="footer__right">
-                    <a class="footer__link" href="./privacy.html">Privacy Statement</a>
-                    <a class="footer__link" href="./terms.html">Terms of Use</a>
-                    <a class="footer__link" href="./cookies.html">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cookie consent banner -->
-    <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
-    <div class="cookiebar" id="cookiebar" hidden>
-        <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
-            <div class="cookiebar__text">
+<div class="footer__right">
+<a class="footer__link" data-i18n="footer.privacy" href="./privacy.html">Privacy Statement</a>
+<a class="footer__link" data-i18n="footer.terms" href="./terms.html">Terms of Use</a>
+<a class="footer__link" data-i18n="footer.cookies" href="./cookies.html">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Cookie consent banner -->
+<div class="cookiebackdrop" hidden="" id="cookiebackdrop"></div>
+<div class="cookiebar" hidden="" id="cookiebar">
+<div aria-label="Cookie consent" class="container cookiebar__inner" data-i18n-attr="aria-label:aria.cookieConsent" role="dialog">
+<div class="cookiebar__text">
                 We use cookies for analytics to understand site usage.
-                See the <a href="./privacy.html">Privacy Statement</a> and
-                <a href="./cookies.html">Cookie Policy</a>.
+                See the <a data-i18n="home.cookie.text.privacy" href="./privacy.html">Privacy Statement</a> and
+                <a data-i18n="home.cookie.text.cookies" href="./cookies.html">Cookie Policy</a>.
             </div>
-
-            <div class="cookiebar__actions">
-                <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
-                <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
-            </div>
-        </div>
-    </div>
-
+<div class="cookiebar__actions">
+<button class="btn btn--small btn--ghost" data-i18n="cookie.reject" id="cookieReject" type="button">Reject</button>
+<button class="btn btn--small" data-i18n="cookie.accept" id="cookieAccept" type="button">Accept</button>
+</div>
+</div>
+</div>
 </body>
-
 </html>
