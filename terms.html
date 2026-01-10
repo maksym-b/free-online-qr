@@ -25,11 +25,26 @@
 <div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
 </div>
 </div>
-<!-- Top navigation -->
 <nav aria-label="Top navigation" class="topnav">
-<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">
-          🌙
-        </button>
+<!-- Desktop links -->
+<div class="topnav__desktop">
+<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
+                        applications</a>
+<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
+                        dynamic QR</a>
+<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+</div>
+<!-- Actions (desktop) -->
+<div class="topnav__actions">
+<div aria-label="Preferences" class="topnav__prefs">
+<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">🌙</button>
+<div aria-label="Select language" class="lang-inline" role="group">
+<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+<span aria-hidden="true" class="lang-inline__sep">|</span>
+<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
+</div>
+</div>
 <!-- Mobile menu -->
 <details class="topnav__mobile" id="mobileNav">
 <summary aria-label="Open menu" class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu">
@@ -47,21 +62,24 @@
 </a>
 <button aria-label="Close menu" class="topnav__close" data-i18n-attr="aria-label:aria.closeMenu" type="button">✕</button>
 </div>
+<!-- Mobile-open -->
+<div aria-label="Preferences" class="topnav__overlayPrefs">
+<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" data-theme-toggle="" type="button">🌙</button>
+<div aria-label="Select language" class="lang-inline" role="group">
+<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+<span aria-hidden="true" class="lang-inline__sep">|</span>
+<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
+</div>
+</div>
 <div class="topnav__overlayLinks">
 <a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
 <a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR applications</a>
 <a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
-<a class="topnav__link" data-i18n="terms.h2.contact" href="./contact.html">Contact</a>
+<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
 </div>
 </div>
 </div>
 </details>
-<!-- Desktop links -->
-<div class="topnav__desktop">
-<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
-<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR applications</a>
-<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
-<a class="topnav__link" data-i18n="terms.h2.contact" href="./contact.html">Contact</a>
 </div>
 </nav>
 </div>
