@@ -9,12 +9,12 @@
 <link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
 <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="./styles.css" rel="stylesheet">
+<link href="./styles.css" rel="stylesheet"/>
 <script defer="" src="./cookies.js"></script>
 <script defer="" src="./theme.js"></script>
 <script defer="" src="./mobile.js"></script>
 <script defer="" src="./i18n.js"></script>
-</link></head>
+</head>
 <body>
 <header class="topbar">
 <div class="container topbar__inner">
@@ -126,11 +126,10 @@
                 used for advertising.
             </p>
 <h2 class="h2" data-i18n="cookies.h2.managing_your_preferences">Managing your preferences</h2>
-<p data-i18n="cookies.p.managing_your_preferences.1">
-                You can manage cookie consent through the banner shown when you first visit the website.
-                You can also change your choice at any time by opening
-                <a class="cookie-manage" href="#">Cookie settings</a>.
-            </p>
+<p><span data-i18n="cookies.p.managing_your_preferences.1a">
+You can manage cookie consent through the banner shown when you first visit the website.
+You can also change your choice at any time by opening
+</span><a class="cookie-manage" data-i18n="cookies.link.cookieSettings" href="#">Cookie settings</a><span data-i18n="cookies.p.managing_your_preferences.1b">.</span></p>
 <p data-i18n="cookies.p.managing_your_preferences.2">
                 You can also control cookies through your browser settings. Most browsers allow you to block
                 cookies, delete existing cookies, or configure site-level permissions. Note that blocking all
@@ -142,10 +141,9 @@
                 Last updated date at the top of this page.
             </p>
 <h2 class="h2" data-i18n="cookies.h2.contact">Contact</h2>
-<p data-i18n="cookies.p.contact.1">
-                If you have questions about this Cookie Policy, please use the <a data-i18n="cookies.h2.contact" href="./contact.html">Contact</a>
-                page.
-            </p>
+<p><span data-i18n="cookies.p.contact.1a">
+If you have questions about this Cookie Policy, please use the
+</span><a data-i18n="cookies.h2.contact" href="./contact.html">Contact</a><span data-i18n="cookies.p.contact.1b">page.</span></p>
 </section>
 </main>
 <!-- Buy me a coffee -->
@@ -181,11 +179,7 @@
 <div class="cookiebackdrop" hidden="" id="cookiebackdrop"></div>
 <div class="cookiebar" hidden="" id="cookiebar">
 <div aria-label="Cookie consent" class="container cookiebar__inner" data-i18n-attr="aria-label:aria.cookieConsent" role="dialog">
-<div class="cookiebar__text">
-                We use cookies for analytics to understand site usage.
-                See the <a data-i18n="home.cookie.text.privacy" href="./privacy.html">Privacy Statement</a> and
-                <a data-i18n="cookies.h1" href="./cookies.html">Cookie Policy</a>.
-            </div>
+<div class="cookiebar__text"><span data-i18n="cookie.text.a">We use cookies for analytics to understand site usage. See the</span><a data-i18n="cookie.text.privacy" href="./privacy.html">Privacy Statement</a><span data-i18n="cookie.text.b">and</span><a data-i18n="cookie.text.cookies" href="./cookies.html">Cookie Policy</a><span data-i18n="cookie.text.c">.</span></div>
 <div class="cookiebar__actions">
 <button class="btn btn--small btn--ghost" data-i18n="cookie.reject" id="cookieReject" type="button">Reject</button>
 <button class="btn btn--small" data-i18n="cookie.accept" id="cookieAccept" type="button">Accept</button>
