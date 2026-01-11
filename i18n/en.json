@@ -35,8 +35,8 @@
   "contact.subtitle": "Do you have a question or suggestion? Please reach out via the contact form.",
   "cookie.accept": "Accept",
   "cookie.reject": "Reject",
-  "cookie.text.a": "We use cookies for analytics to understand site usage. See the",
-  "cookie.text.b": "and",
+  "cookie.text.a": "We use cookies for analytics to understand site usage. See the ",
+  "cookie.text.b": " and ",
   "cookie.text.c": ".",
   "cookie.text.cookies": "Cookie Policy",
   "cookie.text.privacy": "Privacy Statement",
@@ -340,33 +340,9 @@
   "terms.p.your_content.1": "You retain responsibility for any content you enter into the generator and any QR codes you produce. We do not verify the accuracy, legality, or safety of your encoded content.",
   "terms.subtitle": "Rules and conditions for using this website.",
   "terms.title": "Terms of Use - Free QR Code Generator",
-  "cookies.p.contact.1a": "If you have questions about this Cookie Policy, please use the",
-  "cookies.p.contact.1b": "page.",
-  "cookies.p.managing_your_preferences.1a": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening",
+  "cookies.p.contact.1a": "If you have questions about this Cookie Policy, please use the ",
+  "cookies.p.contact.1b": " page.",
+  "cookies.p.managing_your_preferences.1a": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening ",
   "cookies.p.managing_your_preferences.1b": ".",
-  "cookies.link.cookieSettings": "Cookie settings",
-  "cookies": {
-    "p": {
-      "contact": {
-        "1a": "If you have questions about this Cookie Policy, please use the ",
-        "1b": " page.",
-        "1": "If you have questions about this Cookie Policy, please use the Contact page."
-      },
-      "managing_your_preferences": {
-        "1a": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening ",
-        "1b": ".",
-        "1": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening Cookie settings."
-      }
-    },
-    "link": {
-      "cookieSettings": "Cookie settings"
-    }
-  },
-  "cookie": {
-    "text": {
-      "a": "We use cookies for analytics to understand site usage. See the ",
-      "b": " and ",
-      "c": "."
-    }
-  }
+  "cookies.link.cookieSettings": "Cookie settings"
 }
