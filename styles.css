@@ -735,6 +735,12 @@ html[data-theme="light"] .note {
   border-color: var(--accent);
 }
 
+html[data-theme="light"] .prefooter__link:hover .muted,
+html[data-theme="light"] .prefooter__link:active .muted,
+html[data-theme="light"] .prefooter__link:focus-visible .muted {
+  color: var(--onAccent);
+}
+
 /* =========================================================
    FOOTER
    ========================================================= */
@@ -1553,20 +1559,15 @@ html[data-theme="light"] .qrappCard__title {
     position: sticky;
     top: 0;
     z-index: 2;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
-
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-
     background: rgba(11, 18, 32, 0.65);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
-    padding: 12px 0;
-
+    padding: 14px 0;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     padding-left: calc(50vw - 50%);
@@ -1636,7 +1637,7 @@ html[data-theme="light"] .qrappCard__title {
     height: auto;
     display: flex;
     align-items: center;
-    padding: 16px 12px;
+    padding: 16px 0px;
     font-size: clamp(22px, 2.2vw, 30px);
     border-bottom: 1px solid var(--line);
     text-decoration: none;
