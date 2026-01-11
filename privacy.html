@@ -230,19 +230,26 @@
         </div>
     </footer>
     <!-- Cookie consent banner -->
-    <div class="cookiebackdrop" hidden="" id="cookiebackdrop"></div>
-    <div class="cookiebar" hidden="" id="cookiebar">
-        <div aria-label="Cookie consent" class="container cookiebar__inner"
-            data-i18n-attr="aria-label:aria.cookieConsent" role="dialog">
+    <div class="cookiebackdrop" hidden id="cookiebackdrop"></div>
+    <div class="cookiebar" hidden id="cookiebar">
+        <div class="container cookiebar__inner" role="dialog" data-i18n-attr="aria-label:aria.cookieConsent">
             <div class="cookiebar__text">
-                We use cookies for analytics to understand site usage.
-                See the <a data-i18n="privacy.h1" href="./privacy.html">Privacy Statement</a> and
-                <a data-i18n="home.cookie.text.cookies" href="./cookies.html">Cookie Policy</a>.
+                <span data-i18n="cookie.text.a">
+                    We use cookies for analytics to understand site usage. See the
+                </span>
+                <a href="./privacy.html" data-i18n="home.cookie.text.privacy">Privacy Statement</a>
+                <span data-i18n="cookie.text.b">
+                    and
+                </span>
+                <a href="./cookies.html" data-i18n="home.cookie.text.cookies">Cookie Policy</a>
             </div>
             <div class="cookiebar__actions">
-                <button class="btn btn--small btn--ghost" data-i18n="cookie.reject" id="cookieReject"
-                    type="button">Reject</button>
-                <button class="btn btn--small" data-i18n="cookie.accept" id="cookieAccept" type="button">Accept</button>
+                <button class="btn btn--small btn--ghost" id="cookieReject" type="button" data-i18n="cookie.reject">
+                    Reject
+                </button>
+                <button class="btn btn--small" id="cookieAccept" type="button" data-i18n="cookie.accept">
+                    Accept
+                </button>
             </div>
         </div>
     </div>
