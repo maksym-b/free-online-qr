@@ -729,15 +729,21 @@ html[data-theme="light"] .note {
 
 .prefooter__link:hover,
 .prefooter__link:active,
-.prefooter__link:focus-visible {
+.prefooter__link:focus-visible,
+.prefooter__link:focus {
   background: var(--accent);
   color: var(--onAccent);
   border-color: var(--accent);
 }
 
+html[data-theme="light"] .muted.small {
+  transition: color 0.15s ease;
+}
+
 html[data-theme="light"] .prefooter__link:hover .muted,
 html[data-theme="light"] .prefooter__link:active .muted,
-html[data-theme="light"] .prefooter__link:focus-visible .muted {
+html[data-theme="light"] .prefooter__link:focus-visible .muted, 
+html[data-theme="light"] .prefooter__link:focus .muted {
   color: var(--onAccent);
 }
 
