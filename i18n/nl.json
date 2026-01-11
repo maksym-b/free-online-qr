@@ -344,5 +344,29 @@
   "cookies.p.contact.1b": "pagina.",
   "cookies.p.managing_your_preferences.1a": "Je kunt cookie-toestemming beheren via de banner die wordt getoond wanneer je de website voor het eerst bezoekt. Je kunt je keuze ook op elk moment wijzigen door",
   "cookies.p.managing_your_preferences.1b": ".",
-  "cookies.link.cookieSettings": "Cookie-instellingen"
+  "cookies.link.cookieSettings": "Cookie-instellingen",
+  "cookies": {
+    "p": {
+      "contact": {
+        "1a": "Als je vragen hebt over dit Cookiebeleid, gebruik dan de ",
+        "1b": " pagina.",
+        "1": "Als je vragen hebt over dit Cookiebeleid, gebruik dan de Contactpagina."
+      },
+      "managing_your_preferences": {
+        "1a": "Je kunt cookie-toestemming beheren via de banner die wordt getoond wanneer je de website voor het eerst bezoekt. Je kunt je keuze ook op elk moment wijzigen door ",
+        "1b": ".",
+        "1": "Je kunt cookie-toestemming beheren via de banner die wordt getoond wanneer je de website voor het eerst bezoekt. Je kunt je keuze ook op elk moment wijzigen door Cookie-instellingen te openen."
+      }
+    },
+    "link": {
+      "cookieSettings": "Cookie-instellingen"
+    }
+  },
+  "cookie": {
+    "text": {
+      "a": "We gebruiken cookies voor analytics om het sitegebruik te begrijpen. Zie de ",
+      "b": " en ",
+      "c": "."
+    }
+  }
 }

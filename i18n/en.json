@@ -344,5 +344,29 @@
   "cookies.p.contact.1b": "page.",
   "cookies.p.managing_your_preferences.1a": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening",
   "cookies.p.managing_your_preferences.1b": ".",
-  "cookies.link.cookieSettings": "Cookie settings"
+  "cookies.link.cookieSettings": "Cookie settings",
+  "cookies": {
+    "p": {
+      "contact": {
+        "1a": "If you have questions about this Cookie Policy, please use the ",
+        "1b": " page.",
+        "1": "If you have questions about this Cookie Policy, please use the Contact page."
+      },
+      "managing_your_preferences": {
+        "1a": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening ",
+        "1b": ".",
+        "1": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening Cookie settings."
+      }
+    },
+    "link": {
+      "cookieSettings": "Cookie settings"
+    }
+  },
+  "cookie": {
+    "text": {
+      "a": "We use cookies for analytics to understand site usage. See the ",
+      "b": " and ",
+      "c": "."
+    }
+  }
 }
