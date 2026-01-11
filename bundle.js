@@ -553,7 +553,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
 
           if (el.tagName !== "SELECT") {
             el.value = "";
-            el.placeholder = "Required";
+            el.placeholder = __t("generator.validation.required", "Required");
           }
 
           if (!firstInvalid) firstInvalid = el;
@@ -584,7 +584,24 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       }
     });
 
-    let activeTypeId = "website";
+    
+    // i18n helpers for dynamically-generated UI (bundle.js)
+    function __t(key, fallbackText) {
+      try {
+        const v = (window.__i18n && typeof window.__i18n.t === "function") ? window.__i18n.t(key) : "";
+        return v || fallbackText || "";
+      } catch (e) {
+        return fallbackText || "";
+      }
+    }
+    function __typeKey(typeId, suffix) {
+      return "generator.types." + typeId + "." + suffix;
+    }
+    function __fieldKey(typeId, fieldId, suffix) {
+      return "generator.types." + typeId + ".fields." + fieldId + "." + suffix;
+    }
+
+let activeTypeId = "website";
     const PREVIEW_PX = PREVIEW_BASE_PX;
 
     function getExportMarginPx(sizePx) {
@@ -780,7 +797,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
     async function nominatimSearch(query) {
       const q = String(query || "").trim();
       if (q.length < 3) {
-        setLocationUiStatus("Type at least 3 characters to search.", true);
+        setLocationUiStatus(__t("generator.location.status.minChars", "Type at least 3 characters to search."), true);
         renderLocationResults([]);
         return;
       }
@@ -790,7 +807,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       }
       nominatimAbort = new AbortController();
 
-      setLocationUiStatus("Searching…", false);
+      setLocationUiStatus(__t("generator.location.status.searching", "Searching…"), false);
 
       const url =
         "https://nominatim.openstreetmap.org/search?format=json&limit=5&addressdetails=1&q=" +
@@ -801,11 +818,11 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         if (!res.ok) throw new Error("Search failed");
         const data = await res.json();
         renderLocationResults(data || []);
-        if (!data || !data.length) setLocationUiStatus("No results found. Try a different query.", true);
-        else setLocationUiStatus("Select a result to fill coordinates.", false);
+        if (!data || !data.length) setLocationUiStatus(__t("generator.location.status.noResults", "No results found. Try a different query."), true);
+        else setLocationUiStatus(__t("generator.location.status.selectResult", "Select a result to fill coordinates."), false);
       } catch (e) {
         if (e && e.name === "AbortError") return;
-        setLocationUiStatus("Search is temporarily unavailable.", true);
+        setLocationUiStatus(__t("generator.location.status.unavailable", "Search is temporarily unavailable."), true);
         renderLocationResults([]);
       }
     }
@@ -818,7 +835,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       const lon = clampLon((values.lon || "").trim());
 
       if (lat === null || lon === null) {
-        preview.innerHTML = `<div class="hint">Search and select a result, or enter Latitude and Longitude to preview the map.</div>`;
+        preview.innerHTML = `<div class="hint">${__t("generator.location.preview.hint","Search and select a result, or enter Latitude and Longitude to preview the map.")}</div>`;
         return;
       }
 
@@ -838,7 +855,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
           style="width:100%;height:260px;border:1px solid rgba(255,255,255,0.12);border-radius:16px;background:rgba(255,255,255,0.04);"
         ></iframe>
         <div class="hint" style="margin-top:8px;">
-          Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>
+          ${__t("generator.location.preview.mapDataPrefix","Map data ©")} <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">${__t("generator.location.preview.osmContrib","OpenStreetMap contributors")}</a>
         </div>
       `;
     }
@@ -859,8 +876,8 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         card.innerHTML = `
           <div class="icon" aria-hidden="true">${t.icon}</div>
           <div>
-            <div class="card__title">${t.title}</div>
-            <div class="card__desc">${t.desc}</div>
+            <div class="card__title">${__t(__typeKey(t.id,"title"), t.title)}</div>
+            <div class="card__desc">${__t(__typeKey(t.id,"desc"), t.desc)}</div>
           </div>
         `;
 
@@ -868,7 +885,9 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
           activeTypeId = t.id;
           renderMenu();
           renderFields();
-          updateQr(true);
+          
+      window.addEventListener("i18n:changed", () => { renderMenu(); renderFields(); updateQr(false); });
+updateQr(true);
           collapseAllSections();
           document.getElementById("generator")?.scrollIntoView({ behavior: "smooth", block: "start" });
         });
@@ -894,8 +913,8 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
 
     function renderFields() {
       const t = QR_TYPES.find(x => x.id === activeTypeId) || QR_TYPES[0];
-      activeTypeTitle.textContent = t.title;
-      activeTypeDesc.textContent = t.desc;
+      activeTypeTitle.textContent = __t(__typeKey(t.id,"title"), t.title);
+      activeTypeDesc.textContent = __t(__typeKey(t.id,"desc"), t.desc);
 
       const fields = t.fields();
       typeFields.innerHTML = "";
@@ -909,26 +928,26 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         wrap.className = "field";
 
         const label = document.createElement("label");
-        label.textContent = f.label + (f.required ? " *" : "");
+        label.textContent = __t(__fieldKey(t.id, f.id, "label"), f.label) + (f.required ? " *" : "");
         wrap.appendChild(label);
 
         let input;
         if (f.type === "textarea") {
           input = document.createElement("textarea");
-          input.placeholder = f.placeholder || "";
+          input.placeholder = __t(__fieldKey(t.id, f.id, "placeholder"), f.placeholder || "");
         } else if (f.type === "select") {
           input = document.createElement("select");
           for (const opt of (f.options || [])) {
             const o = document.createElement("option");
             o.value = opt;
-            o.textContent = opt || (f.id === "country" ? "Select country" : "Select");
+            o.textContent = opt || (f.id === "country" ? __t("generator.types.vcard.fields.country.options.select", "Select country") : __t(__fieldKey(t.id, f.id, "options.select"), "Select"));
             if (!opt) o.disabled = true;
             input.appendChild(o);
           }
         } else {
           input = document.createElement("input");
           input.type = f.type || "text";
-          input.placeholder = f.placeholder || "";
+          input.placeholder = __t(__fieldKey(t.id, f.id, "placeholder"), f.placeholder || "");
         }
 
         input.id = `field_${f.id}`;
@@ -957,7 +976,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = "btn btn--small";
-          btn.textContent = "Search";
+          btn.textContent = __t("generator.location.button.search", "Search");
           btn.addEventListener("click", () => nominatimSearch(searchEl.value));
 
           const hint = document.createElement("span");
@@ -1052,7 +1071,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
       }
 
       if (activeTypeId === "location") {
-        setLocationUiStatus("Select a result to fill coordinates.", false);
+        setLocationUiStatus(__t("generator.location.status.selectResult", "Select a result to fill coordinates."), false);
         updateLocationPreview(readValues());
       }
     }
@@ -1268,7 +1287,7 @@ async function pngToJpgDataUrl(pngDataUrl, widthPx = 320, heightPx = widthPx, ba
         f.type === "image/svg+xml";
 
       if (!ok) {
-        alert("Please upload a PNG, JPG, or SVG file.");
+        alert(__t("generator.logo.alert.badType", "Please upload a PNG, JPG, or SVG file."));
         logoFile.value = "";
         return;
       }
