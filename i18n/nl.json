@@ -339,5 +339,10 @@
   "terms.p.what_this_website_provides.1": "De website biedt een client-side QR-codegenerator. QR-codes worden in je browser gegenereerd. Jij bent verantwoordelijk voor de inhoud die je encodeert en hoe je de gegenereerde QR-codes gebruikt.",
   "terms.p.your_content.1": "Je blijft verantwoordelijk voor alle content die je in de generator invoert en voor alle QR-codes die je maakt. Wij verifiëren de nauwkeurigheid, legaliteit of veiligheid van je gecodeerde content niet.",
   "terms.subtitle": "Regels en voorwaarden voor het gebruik van deze website.",
-  "terms.title": "Gebruiksvoorwaarden - Gratis QR-codegenerator"
+  "terms.title": "Gebruiksvoorwaarden - Gratis QR-codegenerator",
+  "cookies.p.contact.1a": "Als je vragen hebt over dit Cookiebeleid, gebruik dan de",
+  "cookies.p.contact.1b": "pagina.",
+  "cookies.p.managing_your_preferences.1a": "Je kunt cookie-toestemming beheren via de banner die wordt getoond wanneer je de website voor het eerst bezoekt. Je kunt je keuze ook op elk moment wijzigen door",
+  "cookies.p.managing_your_preferences.1b": ".",
+  "cookies.link.cookieSettings": "Cookie-instellingen"
 }

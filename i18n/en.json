@@ -339,5 +339,10 @@
   "terms.p.what_this_website_provides.1": "The website provides a client-side QR code generator. QR codes are generated in your browser. You are responsible for the content you encode and how you use the generated QR codes.",
   "terms.p.your_content.1": "You retain responsibility for any content you enter into the generator and any QR codes you produce. We do not verify the accuracy, legality, or safety of your encoded content.",
   "terms.subtitle": "Rules and conditions for using this website.",
-  "terms.title": "Terms of Use - Free QR Code Generator"
+  "terms.title": "Terms of Use - Free QR Code Generator",
+  "cookies.p.contact.1a": "If you have questions about this Cookie Policy, please use the",
+  "cookies.p.contact.1b": "page.",
+  "cookies.p.managing_your_preferences.1a": "You can manage cookie consent through the banner shown when you first visit the website. You can also change your choice at any time by opening",
+  "cookies.p.managing_your_preferences.1b": ".",
+  "cookies.link.cookieSettings": "Cookie settings"
 }
