@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Free QR Code Generator</title>
+      <meta name="description"
+    content="This website was created to support the online community with practical and useful services. The philosophy behind this project is freedom of creativity, good user experience and helping others." />
     <link rel="canonical" href="https://www.free-online-qr.com/about.html" />
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
@@ -365,26 +367,32 @@
     </footer>
 
     <!-- Cookie consent banner -->
-    <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
-    <div class="cookiebar" id="cookiebar" hidden>
-        <div class="container cookiebar__inner" role="dialog" data-i18n-attr="aria-label:aria.cookieConsent"
-            aria-label="Cookie consent">
+    <div class="cookiebackdrop" hidden id="cookiebackdrop"></div>
+    <div class="cookiebar" hidden id="cookiebar">
+        <div class="container cookiebar__inner" role="dialog" data-i18n-attr="aria-label:aria.cookieConsent">
             <div class="cookiebar__text">
-                <span data-i18n="cookie.text.a">We use cookies for analytics to understand site usage. See the </span>
-                <a href="./privacy.html" data-i18n="cookie.text.privacy">Privacy Statement</a>
-                <span data-i18n="cookie.text.b"> and </span>
-                <a href="./cookies.html" data-i18n="cookie.text.cookies">Cookie Policy</a>
+                <span data-i18n="cookie.text.a">
+                    We use cookies for analytics to understand site usage. See the
+                </span>
+                <a href="./privacy.html" data-i18n="home.cookie.text.privacy">Privacy Statement</a>
+                <span data-i18n="cookie.text.b">
+                    and
+                </span>
+                <a href="./cookies.html" data-i18n="home.cookie.text.cookies">Cookie Policy</a>
                 <span data-i18n="cookie.text.c">.</span>
             </div>
 
             <div class="cookiebar__actions">
-                <button class="btn btn--small btn--ghost" type="button" id="cookieReject"
-                    data-i18n="cookie.reject">Reject</button>
-                <button class="btn btn--small" type="button" id="cookieAccept" data-i18n="cookie.accept">Accept</button>
+                <button class="btn btn--small btn--ghost" id="cookieReject" type="button" data-i18n="cookie.reject">
+                    Reject
+                </button>
+                <button class="btn btn--small" id="cookieAccept" type="button" data-i18n="cookie.accept">
+                    Accept
+                </button>
             </div>
         </div>
     </div>
-
+    
     <script>
         (function () {
             const list = document.getElementById("faqList");

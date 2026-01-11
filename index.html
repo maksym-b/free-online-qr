@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free QR Code Generator</title>
+  <meta name="description"
+    content="Generate free static QR codes directly in your browser. No sign-up, no tracking, no expiry. Create QR codes for URLs, text, Wi-Fi, and more." />
   <link rel="canonical" href="https://www.free-online-qr.com/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
@@ -20,99 +22,97 @@
 <body>
   <header class="topbar">
     <div class="container topbar__inner">
-
       <div class="brand">
-        <a href="/" class="brand__logo" aria-label="Go to homepage">QR</a>
+        <a aria-label="Go to homepage" class="brand__logo" href="/">QR</a>
         <div>
-          <div class="brand__name">Free QR Code Generator</div>
-          <div class="brand__sub">Static QR codes. No expiry.</div>
+          <div class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</div>
+          <div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
         </div>
       </div>
-
-      <nav class="topnav" aria-label="Top navigation">
-
+      <nav aria-label="Top navigation" class="topnav">
         <!-- Desktop links -->
         <div class="topnav__desktop">
-          <a class="topnav__link" href="./about.html" data-i18n="nav.about">About</a>
-          <a class="topnav__link" href="./qr-applications.html" data-i18n="nav.qrApplications">QR applications</a>
-          <a class="topnav__link" href="./static-vs-dynamic-qr.html" data-i18n="nav.staticVsDynamic">Static vs dynamic
-            QR</a>
-          <a class="topnav__link" href="./contact.html" data-i18n="nav.contact">Contact</a>
+          <a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+          <a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
+            applications</a>
+          <a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
+            dynamic QR</a>
+          <a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
         </div>
-
         <!-- Actions (desktop) -->
         <div class="topnav__actions">
-          <div class="topnav__prefs" aria-label="Preferences">
-            <button class="pill" type="button" id="themeToggle" data-i18n-attr="aria-label:aria.themeToggle"
-              aria-label="Toggle light/dark mode">🌙</button>
-
-            <div class="lang-inline" role="group" aria-label="Select language">
-              <button type="button" class="lang-inline__btn" data-lang="en" aria-label="English">EN</button>
-              <span class="lang-inline__sep" aria-hidden="true">|</span>
-              <button type="button" class="lang-inline__btn" data-lang="nl" aria-label="Nederlands">NL</button>
+          <div aria-label="Preferences" class="topnav__prefs">
+            <button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle"
+              id="themeToggle" type="button">🌙</button>
+            <div aria-label="Select language" class="lang-inline" role="group">
+              <button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+              <span aria-hidden="true" class="lang-inline__sep">|</span>
+              <button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
             </div>
           </div>
-
           <!-- Mobile menu -->
           <details class="topnav__mobile" id="mobileNav">
-            <summary class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu" aria-label="Open menu">
-              <span class="topnav__hamburger" aria-hidden="true"></span>
+            <summary aria-label="Open menu" class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu">
+              <span aria-hidden="true" class="topnav__hamburger"></span>
             </summary>
-
-            <div class="topnav__panel" role="dialog" data-i18n-attr="aria-label:aria.siteMenu" aria-label="Site menu">
+            <div aria-label="Site menu" class="topnav__panel" data-i18n-attr="aria-label:aria.siteMenu" role="dialog">
               <div class="topnav__overlayInner container">
-
                 <div class="topnav__overlayHeader">
-                  <a href="/" class="brand brand--overlay" aria-label="Go to homepage">
-                    <span class="brand__logo" aria-hidden="true">QR</span>
+                  <a aria-label="Go to homepage" class="brand brand--overlay" href="/">
+                    <span aria-hidden="true" class="brand__logo">QR</span>
                     <span class="brand__text">
-                      <span class="brand__name">Free QR Code Generator</span>
-                      <span class="brand__sub">Static QR codes. No expiry.</span>
+                      <span class="brand__name" data-i18n="home.brand.name">Free QR Code
+                        Generator</span>
+                      <span class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No
+                        expiry.</span>
                     </span>
                   </a>
-
-                  <button type="button" class="topnav__close" data-i18n-attr="aria-label:aria.closeMenu"
-                    aria-label="Close menu">✕</button>
+                  <button aria-label="Close menu" class="topnav__close" data-i18n-attr="aria-label:aria.closeMenu"
+                    type="button">✕</button>
                 </div>
-
                 <!-- Mobile-open -->
-                <div class="topnav__overlayPrefs" aria-label="Preferences">
-                  <button class="pill" type="button" data-theme-toggle data-i18n-attr="aria-label:aria.themeToggle"
-                    aria-label="Toggle light/dark mode">🌙</button>
-
-                  <div class="lang-inline" role="group" aria-label="Select language">
-                    <button type="button" class="lang-inline__btn" data-lang="en" aria-label="English">EN</button>
-                    <span class="lang-inline__sep" aria-hidden="true">|</span>
-                    <button type="button" class="lang-inline__btn" data-lang="nl" aria-label="Nederlands">NL</button>
+                <div aria-label="Preferences" class="topnav__overlayPrefs">
+                  <button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle"
+                    data-theme-toggle="" type="button">🌙</button>
+                  <div aria-label="Select language" class="lang-inline" role="group">
+                    <button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
+                    <span aria-hidden="true" class="lang-inline__sep">|</span>
+                    <button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
                   </div>
                 </div>
-
                 <div class="topnav__overlayLinks">
-                  <a class="topnav__link" href="./about.html" data-i18n="nav.about">About</a>
-                  <a class="topnav__link" href="./qr-applications.html" data-i18n="nav.qrApplications">QR
+                  <a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+                  <a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
                     applications</a>
-                  <a class="topnav__link" href="./static-vs-dynamic-qr.html" data-i18n="nav.staticVsDynamic">Static vs
+                  <a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
                     dynamic QR</a>
-                  <a class="topnav__link" href="./contact.html" data-i18n="nav.contact">Contact</a>
+                  <a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
                 </div>
-
               </div>
             </div>
           </details>
         </div>
-
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- MENU  -->
+    <!-- MENU -->
     <section class="menu">
-      <h1 class="h1">Select a category</h1>
-      <p class="muted">Not sure? Check <a href="./qr-applications.html">QR applications guide</a></p>
+      <h1 class="h1" data-i18n="qr.menu.h1">
+        Select a category
+      </h1>
 
-      <div class="grid" id="typeGrid" aria-label="QR types">
-      </div>
+      <p class="muted">
+        <span data-i18n="qr.menu.help.1a">
+          Not sure? Check
+        </span>
+        <a href="./qr-applications.html" data-i18n="qr.menu.help.link">
+          QR applications guide
+        </a>
+      </p>
+
+      <div class="grid" id="typeGrid" aria-label="QR types"></div>
     </section>
 
     <!-- GENERATOR -->
@@ -278,48 +278,57 @@
   <section class="coffee">
     <div class="container coffee__inner">
       <div class="coffee__left">
-        <span class="coffee__icon" aria-hidden="true">☕</span>
-        <span class="coffee__text">
+        <span aria-hidden="true" class="coffee__icon">☕</span>
+        <span class="coffee__text" data-i18n="coffee.text">
           If this tool helped you, consider buying me a coffee
         </span>
       </div>
-
-      <a class="coffee__btn" href="https://buymeacoffee.com/webevangelist" target="_blank" rel="noopener">
+      <a class="coffee__btn" data-i18n="coffee.btn" href="https://buymeacoffee.com/webevangelist" rel="noopener"
+        target="_blank">
         Buy Me a Coffee
       </a>
     </div>
   </section>
 
-  <!-- Footer bar -->
+  <!-- Footer bar (full width like topbar) -->
   <footer class="footerbar" role="contentinfo">
     <div class="container footer">
       <div class="footer__inner">
-        <div class="footer__left muted small">
+        <div class="footer__left muted small" data-i18n="home.footer.made">
           © 2026 free-online-qr.com. Made with ❤️ in NL
         </div>
-
         <div class="footer__right">
-          <a class="footer__link" href="./privacy.html">Privacy Statement</a>
-          <a class="footer__link" href="./terms.html">Terms of Use</a>
-          <a class="footer__link" href="./cookies.html">Cookie Policy</a>
+          <a class="footer__link" data-i18n="footer.privacy" href="./privacy.html">Privacy Statement</a>
+          <a class="footer__link" data-i18n="footer.terms" href="./terms.html">Terms of Use</a>
+          <a class="footer__link" data-i18n="footer.cookies" href="./cookies.html">Cookie Policy</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- Cookie consent banner -->
-  <div class="cookiebackdrop" id="cookiebackdrop" hidden></div>
-  <div class="cookiebar" id="cookiebar" hidden>
-    <div class="container cookiebar__inner" role="dialog" aria-label="Cookie consent">
+  <div class="cookiebackdrop" hidden id="cookiebackdrop"></div>
+  <div class="cookiebar" hidden id="cookiebar">
+    <div class="container cookiebar__inner" role="dialog" data-i18n-attr="aria-label:aria.cookieConsent">
       <div class="cookiebar__text">
-        We use cookies for analytics to understand site usage.
-        See the <a href="./privacy.html">Privacy Statement</a> and
-        <a href="./cookies.html">Cookie Policy</a>.
+        <span data-i18n="cookie.text.a">
+          We use cookies for analytics to understand site usage. See the
+        </span>
+        <a href="./privacy.html" data-i18n="home.cookie.text.privacy">Privacy Statement</a>
+        <span data-i18n="cookie.text.b">
+          and
+        </span>
+        <a href="./cookies.html" data-i18n="home.cookie.text.cookies">Cookie Policy</a>
+        <span data-i18n="cookie.text.c">.</span>
       </div>
 
       <div class="cookiebar__actions">
-        <button class="btn btn--small btn--ghost" type="button" id="cookieReject">Reject</button>
-        <button class="btn btn--small" type="button" id="cookieAccept">Accept</button>
+        <button class="btn btn--small btn--ghost" id="cookieReject" type="button" data-i18n="cookie.reject">
+          Reject
+        </button>
+        <button class="btn btn--small" id="cookieAccept" type="button" data-i18n="cookie.accept">
+          Accept
+        </button>
       </div>
     </div>
   </div>

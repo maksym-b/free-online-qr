@@ -1,170 +1,206 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact - Free QR Code Generator</title>
-<link href="https://www.free-online-qr.com/contact.html" rel="canonical"/>
-<link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="./styles.css" rel="stylesheet">
-<script defer="" src="./cookies.js"></script>
-<script defer="" src="./theme.js"></script>
-<script defer="" src="./mobile.js"></script>
-<script defer="" src="./i18n.js"></script>
-</link></head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact - Free QR Code Generator</title>
+    <meta name="description"
+    content="Do you have a question or suggestion? Please reach out via the contact form." />
+    <link href="https://www.free-online-qr.com/contact.html" rel="canonical" />
+    <link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png" />
+    <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="./styles.css" rel="stylesheet">
+    <script defer="" src="./cookies.js"></script>
+    <script defer="" src="./theme.js"></script>
+    <script defer="" src="./mobile.js"></script>
+    <script defer="" src="./i18n.js"></script>
+    </link>
+</head>
+
 <body>
-<header class="topbar">
-<div class="container topbar__inner">
-<div class="brand">
-<a aria-label="Go to homepage" class="brand__logo" href="/">QR</a>
-<div>
-<div class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</div>
-<div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
-</div>
-</div>
-<nav aria-label="Top navigation" class="topnav">
-<!-- Desktop links -->
-<div class="topnav__desktop">
-<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
-<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
+    <header class="topbar">
+        <div class="container topbar__inner">
+            <div class="brand">
+                <a aria-label="Go to homepage" class="brand__logo" href="/">QR</a>
+                <div>
+                    <div class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</div>
+                    <div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
+                </div>
+            </div>
+            <nav aria-label="Top navigation" class="topnav">
+                <!-- Desktop links -->
+                <div class="topnav__desktop">
+                    <a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+                    <a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
                         applications</a>
-<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
+                    <a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
                         dynamic QR</a>
-<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
-</div>
-<!-- Actions (desktop) -->
-<div class="topnav__actions">
-<div aria-label="Preferences" class="topnav__prefs">
-<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">🌙</button>
-<div aria-label="Select language" class="lang-inline" role="group">
-<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
-<span aria-hidden="true" class="lang-inline__sep">|</span>
-<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
-</div>
-</div>
-<!-- Mobile menu -->
-<details class="topnav__mobile" id="mobileNav">
-<summary aria-label="Open menu" class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu">
-<span aria-hidden="true" class="topnav__hamburger"></span>
-</summary>
-<div aria-label="Site menu" class="topnav__panel" data-i18n-attr="aria-label:aria.siteMenu" role="dialog">
-<div class="topnav__overlayInner container">
-<div class="topnav__overlayHeader">
-<a aria-label="Go to homepage" class="brand brand--overlay" href="/">
-<span aria-hidden="true" class="brand__logo">QR</span>
-<span class="brand__text">
-<span class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</span>
-<span class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</span>
-</span>
-</a>
-<button aria-label="Close menu" class="topnav__close" data-i18n-attr="aria-label:aria.closeMenu" type="button">✕</button>
-</div>
-<!-- Mobile-open -->
-<div aria-label="Preferences" class="topnav__overlayPrefs">
-<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" data-theme-toggle="" type="button">🌙</button>
-<div aria-label="Select language" class="lang-inline" role="group">
-<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
-<span aria-hidden="true" class="lang-inline__sep">|</span>
-<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
-</div>
-</div>
-<div class="topnav__overlayLinks">
-<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
-<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR applications</a>
-<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
-<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
-</div>
-</div>
-</div>
-</details>
-</div>
-</nav>
-</div>
-</header>
-<main class="container">
-<section class="menu">
-<h1 class="h1" data-i18n="contact.h1">Contact</h1>
-<p class="muted">Do you have a question or suggestion?
+                    <a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+                </div>
+                <!-- Actions (desktop) -->
+                <div class="topnav__actions">
+                    <div aria-label="Preferences" class="topnav__prefs">
+                        <button aria-label="Toggle light/dark mode" class="pill"
+                            data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">🌙</button>
+                        <div aria-label="Select language" class="lang-inline" role="group">
+                            <button aria-label="English" class="lang-inline__btn" data-lang="en"
+                                type="button">EN</button>
+                            <span aria-hidden="true" class="lang-inline__sep">|</span>
+                            <button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl"
+                                type="button">NL</button>
+                        </div>
+                    </div>
+                    <!-- Mobile menu -->
+                    <details class="topnav__mobile" id="mobileNav">
+                        <summary aria-label="Open menu" class="topnav__toggle"
+                            data-i18n-attr="aria-label:aria.openMenu">
+                            <span aria-hidden="true" class="topnav__hamburger"></span>
+                        </summary>
+                        <div aria-label="Site menu" class="topnav__panel" data-i18n-attr="aria-label:aria.siteMenu"
+                            role="dialog">
+                            <div class="topnav__overlayInner container">
+                                <div class="topnav__overlayHeader">
+                                    <a aria-label="Go to homepage" class="brand brand--overlay" href="/">
+                                        <span aria-hidden="true" class="brand__logo">QR</span>
+                                        <span class="brand__text">
+                                            <span class="brand__name" data-i18n="home.brand.name">Free QR Code
+                                                Generator</span>
+                                            <span class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No
+                                                expiry.</span>
+                                        </span>
+                                    </a>
+                                    <button aria-label="Close menu" class="topnav__close"
+                                        data-i18n-attr="aria-label:aria.closeMenu" type="button">✕</button>
+                                </div>
+                                <!-- Mobile-open -->
+                                <div aria-label="Preferences" class="topnav__overlayPrefs">
+                                    <button aria-label="Toggle light/dark mode" class="pill"
+                                        data-i18n-attr="aria-label:aria.themeToggle" data-theme-toggle=""
+                                        type="button">🌙</button>
+                                    <div aria-label="Select language" class="lang-inline" role="group">
+                                        <button aria-label="English" class="lang-inline__btn" data-lang="en"
+                                            type="button">EN</button>
+                                        <span aria-hidden="true" class="lang-inline__sep">|</span>
+                                        <button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl"
+                                            type="button">NL</button>
+                                    </div>
+                                </div>
+                                <div class="topnav__overlayLinks">
+                                    <a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+                                    <a class="topnav__link" data-i18n="nav.qrApplications"
+                                        href="./qr-applications.html">QR applications</a>
+                                    <a class="topnav__link" data-i18n="nav.staticVsDynamic"
+                                        href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                                    <a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="menu">
+            <h1 class="h1" data-i18n="contact.h1">Contact</h1>
+            <p class="muted">Do you have a question or suggestion?
                 Please reach out via the contact form.</p>
-</section>
-<section class="contact">
-<div class="panel contact__panel">
-<form action="https://formcarry.com/s/8GOwX8Ulppb" autocomplete="on" class="form" enctype="multipart/form-data" id="contactForm" method="POST" novalidate="">
-<!-- Honeypot (bots only) -->
-<div aria-hidden="true" class="hp">
-<label data-i18n="generator.types.vcard.fields.url.label" for="website">Website</label>
-<input autocomplete="off" id="website" name="website" tabindex="-1" type="text"/>
-</div>
-<div class="field">
-<label data-i18n="contact.form.name.label" for="name">Name *</label>
-<input data-i18n-attr="placeholder:contact.form.name.placeholder" id="name" maxlength="80" name="name" placeholder="Your name" required="" type="text"/>
-<div aria-live="polite" class="field__error"></div>
-</div>
-<div class="field">
-<label data-i18n="contact.form.email.label" for="email">Email (optional)</label>
-<input data-i18n-attr="placeholder:contact.form.email.placeholder" id="email" maxlength="120" name="email" placeholder="you@example.com" type="email"/>
-</div>
-<div class="field">
-<label data-i18n="contact.form.message.label" for="message">Message *</label>
-<textarea data-i18n-attr="placeholder:contact.form.message.placeholder" id="message" maxlength="2000" name="message" placeholder="Type your message" required="" rows="6"></textarea>
-<div aria-live="polite" class="field__error"></div>
-</div>
-<!-- Consent -->
-<div class="field">
-<label class="checkbox">
-<input id="consent" name="consent" required="" type="checkbox"/>
-<span>
-                                I have read and accept the
-                                <a data-i18n="contact.form.consent.terms" href="./terms.html" rel="noopener" target="_blank">Terms of Use</a>
-                                and
-                                <a data-i18n="contact.form.consent.privacy" href="./privacy.html" rel="noopener" target="_blank">Privacy Policy</a>
-                                *
+        </section>
+        <section class="contact">
+            <div class="panel contact__panel">
+                <form action="https://formcarry.com/s/8GOwX8Ulppb" autocomplete="on" class="form"
+                    enctype="multipart/form-data" id="contactForm" method="POST" novalidate="">
+                    <!-- Honeypot (bots only) -->
+                    <div aria-hidden="true" class="hp">
+                        <label data-i18n="generator.types.vcard.fields.url.label" for="website">Website</label>
+                        <input autocomplete="off" id="website" name="website" tabindex="-1" type="text" />
+                    </div>
+                    <div class="field">
+                        <label data-i18n="contact.form.name.label" for="name">Name *</label>
+                        <input data-i18n-attr="placeholder:contact.form.name.placeholder" id="name" maxlength="80"
+                            name="name" placeholder="Your name" required="" type="text" />
+                        <div aria-live="polite" class="field__error"></div>
+                    </div>
+                    <div class="field">
+                        <label data-i18n="contact.form.email.label" for="email">Email (optional)</label>
+                        <input data-i18n-attr="placeholder:contact.form.email.placeholder" id="email" maxlength="120"
+                            name="email" placeholder="you@example.com" type="email" />
+                    </div>
+                    <div class="field">
+                        <label data-i18n="contact.form.message.label" for="message">Message *</label>
+                        <textarea data-i18n-attr="placeholder:contact.form.message.placeholder" id="message"
+                            maxlength="2000" name="message" placeholder="Type your message" required=""
+                            rows="6"></textarea>
+                        <div aria-live="polite" class="field__error"></div>
+                    </div>
+                    <!-- Consent -->
+                    <div class="field">
+                        <label class="checkbox">
+                            <input id="consent" name="consent" required type="checkbox" />
+                            <span>
+                                <span data-i18n="contact.form.consent.1a">
+                                    I have read and accept the
+                                </span>
+                                <a href="./terms.html" target="_blank" rel="noopener"
+                                    data-i18n="contact.form.consent.terms">
+                                    Terms of Use
+                                </a>
+                                <span data-i18n="contact.form.consent.1b">
+                                    and
+                                </span>
+                                <a href="./privacy.html" target="_blank" rel="noopener"
+                                    data-i18n="contact.form.consent.privacy">
+                                    Privacy Policy
+                                </a>
+                                <span data-i18n="contact.form.consent.1c">*</span>
                             </span>
-</label>
-<div aria-live="polite" class="field__error"></div>
-</div>
-<div class="actions">
-<button class="btn" data-i18n="contact.form.send" id="btnSend" type="submit">Send</button>
-<span aria-live="polite" class="hint" id="contactStatus"></span>
-</div>
-</form>
-</div>
-</section>
-</main>
-<!-- Buy me a coffee -->
-<section class="coffee">
-<div class="container coffee__inner">
-<div class="coffee__left">
-<span aria-hidden="true" class="coffee__icon">☕</span>
-<span class="coffee__text" data-i18n="coffee.text">
+                        </label>
+                        <div class="field__error" aria-live="polite"></div>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn" id="btnSend" type="submit" data-i18n="contact.form.send">
+                            Send
+                        </button>
+                        <span id="contactStatus" class="hint" aria-live="polite"></span>
+                    </div>
+        </section>
+    </main>
+    <!-- Buy me a coffee -->
+    <section class="coffee">
+        <div class="container coffee__inner">
+            <div class="coffee__left">
+                <span aria-hidden="true" class="coffee__icon">☕</span>
+                <span class="coffee__text" data-i18n="coffee.text">
                     If this tool helped you, consider buying me a coffee
                 </span>
-</div>
-<a class="coffee__btn" data-i18n="coffee.btn" href="https://buymeacoffee.com/webevangelist" rel="noopener" target="_blank">
+            </div>
+            <a class="coffee__btn" data-i18n="coffee.btn" href="https://buymeacoffee.com/webevangelist" rel="noopener"
+                target="_blank">
                 Buy Me a Coffee
             </a>
-</div>
-</section>
+        </div>
+    </section>
 
-<!-- Footer -->
-<footer class="footerbar" role="contentinfo">
-<div class="container footer">
-<div class="footer__inner">
-<div class="footer__left muted small" data-i18n="home.footer.made">
+    <!-- Footer -->
+    <footer class="footerbar" role="contentinfo">
+        <div class="container footer">
+            <div class="footer__inner">
+                <div class="footer__left muted small" data-i18n="home.footer.made">
                     © 2026 free-online-qr.com. Made with ❤️ in NL
                 </div>
-<div class="footer__right">
-<a class="footer__link" data-i18n="footer.privacy" href="./privacy.html">Privacy Statement</a>
-<a class="footer__link" data-i18n="footer.terms" href="./terms.html">Terms of Use</a>
-<a class="footer__link" data-i18n="footer.cookies" href="./cookies.html">Cookie Policy</a>
-</div>
-</div>
-</div>
-</footer>
-<script>
+                <div class="footer__right">
+                    <a class="footer__link" data-i18n="footer.privacy" href="./privacy.html">Privacy Statement</a>
+                    <a class="footer__link" data-i18n="footer.terms" href="./terms.html">Terms of Use</a>
+                    <a class="footer__link" data-i18n="footer.cookies" href="./cookies.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
         (function () {
             const form = document.getElementById("contactForm");
             const statusEl = document.getElementById("contactStatus");
@@ -292,20 +328,32 @@
             });
         })();
     </script>
-<!-- Cookie consent banner -->
-<div class="cookiebackdrop" hidden="" id="cookiebackdrop"></div>
-<div class="cookiebar" hidden="" id="cookiebar">
-<div aria-label="Cookie consent" class="container cookiebar__inner" data-i18n-attr="aria-label:aria.cookieConsent" role="dialog">
-<div class="cookiebar__text">
-                We use cookies for analytics to understand site usage.
-                See the <a data-i18n="home.cookie.text.privacy" href="./privacy.html">Privacy Statement</a> and
-                <a data-i18n="home.cookie.text.cookies" href="./cookies.html">Cookie Policy</a>.
+    <!-- Cookie consent banner -->
+    <div class="cookiebackdrop" hidden id="cookiebackdrop"></div>
+    <div class="cookiebar" hidden id="cookiebar">
+        <div class="container cookiebar__inner" role="dialog" data-i18n-attr="aria-label:aria.cookieConsent">
+            <div class="cookiebar__text">
+                <span data-i18n="cookie.text.a">
+                    We use cookies for analytics to understand site usage. See the
+                </span>
+                <a href="./privacy.html" data-i18n="home.cookie.text.privacy">Privacy Statement</a>
+                <span data-i18n="cookie.text.b">
+                    and
+                </span>
+                <a href="./cookies.html" data-i18n="home.cookie.text.cookies">Cookie Policy</a>
+                <span data-i18n="cookie.text.c">.</span>
             </div>
-<div class="cookiebar__actions">
-<button class="btn btn--small btn--ghost" data-i18n="cookie.reject" id="cookieReject" type="button">Reject</button>
-<button class="btn btn--small" data-i18n="cookie.accept" id="cookieAccept" type="button">Accept</button>
-</div>
-</div>
-</div>
+
+            <div class="cookiebar__actions">
+                <button class="btn btn--small btn--ghost" id="cookieReject" type="button" data-i18n="cookie.reject">
+                    Reject
+                </button>
+                <button class="btn btn--small" id="cookieAccept" type="button" data-i18n="cookie.accept">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

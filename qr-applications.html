@@ -1,231 +1,287 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>QR applications - Free QR Code Generator</title>
-<link href="https://www.free-online-qr.com/qr-applications.html" rel="canonical"/>
-<link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="./styles.css" rel="stylesheet">
-<script defer="" src="./cookies.js"></script>
-<script defer="" src="./theme.js"></script>
-<script defer="" src="./mobile.js"></script>
-<script defer="" src="./i18n.js"></script>
-</link></head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>QR applications - Free QR Code Generator</title>
+    <meta name="description"
+        content="Common QR code applications and use cases about how QR codes are used for websites, payments, Wi-Fi access, contact details, and more." />
+    <link href="https://www.free-online-qr.com/qr-applications.html" rel="canonical" />
+    <link href="/assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="/assets/favicon-16.png" rel="icon" sizes="16x16" type="image/png" />
+    <link href="/assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="./styles.css" rel="stylesheet">
+    <script defer="" src="./cookies.js"></script>
+    <script defer="" src="./theme.js"></script>
+    <script defer="" src="./mobile.js"></script>
+    <script defer="" src="./i18n.js"></script>
+    </link>
+</head>
+
 <body>
-<header class="topbar">
-<div class="container topbar__inner">
-<div class="brand">
-<a aria-label="Go to homepage" class="brand__logo" href="/">QR</a>
-<div>
-<div class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</div>
-<div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
-</div>
-</div>
-<nav aria-label="Top navigation" class="topnav">
-<!-- Desktop links -->
-<div class="topnav__desktop">
-<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
-<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
+    <header class="topbar">
+        <div class="container topbar__inner">
+            <div class="brand">
+                <a aria-label="Go to homepage" class="brand__logo" href="/">QR</a>
+                <div>
+                    <div class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</div>
+                    <div class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</div>
+                </div>
+            </div>
+            <nav aria-label="Top navigation" class="topnav">
+                <!-- Desktop links -->
+                <div class="topnav__desktop">
+                    <a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+                    <a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR
                         applications</a>
-<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
+                    <a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs
                         dynamic QR</a>
-<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
-</div>
-<!-- Actions (desktop) -->
-<div class="topnav__actions">
-<div aria-label="Preferences" class="topnav__prefs">
-<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">🌙</button>
-<div aria-label="Select language" class="lang-inline" role="group">
-<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
-<span aria-hidden="true" class="lang-inline__sep">|</span>
-<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
-</div>
-</div>
-<!-- Mobile menu -->
-<details class="topnav__mobile" id="mobileNav">
-<summary aria-label="Open menu" class="topnav__toggle" data-i18n-attr="aria-label:aria.openMenu">
-<span aria-hidden="true" class="topnav__hamburger"></span>
-</summary>
-<div aria-label="Site menu" class="topnav__panel" data-i18n-attr="aria-label:aria.siteMenu" role="dialog">
-<div class="topnav__overlayInner container">
-<div class="topnav__overlayHeader">
-<a aria-label="Go to homepage" class="brand brand--overlay" href="/">
-<span aria-hidden="true" class="brand__logo">QR</span>
-<span class="brand__text">
-<span class="brand__name" data-i18n="home.brand.name">Free QR Code Generator</span>
-<span class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No expiry.</span>
-</span>
-</a>
-<button aria-label="Close menu" class="topnav__close" data-i18n-attr="aria-label:aria.closeMenu" type="button">✕</button>
-</div>
-<!-- Mobile-open -->
-<div aria-label="Preferences" class="topnav__overlayPrefs">
-<button aria-label="Toggle light/dark mode" class="pill" data-i18n-attr="aria-label:aria.themeToggle" data-theme-toggle="" type="button">🌙</button>
-<div aria-label="Select language" class="lang-inline" role="group">
-<button aria-label="English" class="lang-inline__btn" data-lang="en" type="button">EN</button>
-<span aria-hidden="true" class="lang-inline__sep">|</span>
-<button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl" type="button">NL</button>
-</div>
-</div>
-<div class="topnav__overlayLinks">
-<a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
-<a class="topnav__link" data-i18n="nav.qrApplications" href="./qr-applications.html">QR applications</a>
-<a class="topnav__link" data-i18n="nav.staticVsDynamic" href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
-<a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
-</div>
-</div>
-</div>
-</details>
-</div>
-</nav>
-</div>
-</header>
-<main class="container">
-<section class="menu">
-<h1 class="h1" data-i18n="qrApplications.h1">QR applications</h1>
-<p class="muted" data-i18n="qrApplications.subtitle">
+                    <a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+                </div>
+                <!-- Actions (desktop) -->
+                <div class="topnav__actions">
+                    <div aria-label="Preferences" class="topnav__prefs">
+                        <button aria-label="Toggle light/dark mode" class="pill"
+                            data-i18n-attr="aria-label:aria.themeToggle" id="themeToggle" type="button">🌙</button>
+                        <div aria-label="Select language" class="lang-inline" role="group">
+                            <button aria-label="English" class="lang-inline__btn" data-lang="en"
+                                type="button">EN</button>
+                            <span aria-hidden="true" class="lang-inline__sep">|</span>
+                            <button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl"
+                                type="button">NL</button>
+                        </div>
+                    </div>
+                    <!-- Mobile menu -->
+                    <details class="topnav__mobile" id="mobileNav">
+                        <summary aria-label="Open menu" class="topnav__toggle"
+                            data-i18n-attr="aria-label:aria.openMenu">
+                            <span aria-hidden="true" class="topnav__hamburger"></span>
+                        </summary>
+                        <div aria-label="Site menu" class="topnav__panel" data-i18n-attr="aria-label:aria.siteMenu"
+                            role="dialog">
+                            <div class="topnav__overlayInner container">
+                                <div class="topnav__overlayHeader">
+                                    <a aria-label="Go to homepage" class="brand brand--overlay" href="/">
+                                        <span aria-hidden="true" class="brand__logo">QR</span>
+                                        <span class="brand__text">
+                                            <span class="brand__name" data-i18n="home.brand.name">Free QR Code
+                                                Generator</span>
+                                            <span class="brand__sub" data-i18n="home.brand.sub">Static QR codes. No
+                                                expiry.</span>
+                                        </span>
+                                    </a>
+                                    <button aria-label="Close menu" class="topnav__close"
+                                        data-i18n-attr="aria-label:aria.closeMenu" type="button">✕</button>
+                                </div>
+                                <!-- Mobile-open -->
+                                <div aria-label="Preferences" class="topnav__overlayPrefs">
+                                    <button aria-label="Toggle light/dark mode" class="pill"
+                                        data-i18n-attr="aria-label:aria.themeToggle" data-theme-toggle=""
+                                        type="button">🌙</button>
+                                    <div aria-label="Select language" class="lang-inline" role="group">
+                                        <button aria-label="English" class="lang-inline__btn" data-lang="en"
+                                            type="button">EN</button>
+                                        <span aria-hidden="true" class="lang-inline__sep">|</span>
+                                        <button aria-label="Nederlands" class="lang-inline__btn" data-lang="nl"
+                                            type="button">NL</button>
+                                    </div>
+                                </div>
+                                <div class="topnav__overlayLinks">
+                                    <a class="topnav__link" data-i18n="nav.about" href="./about.html">About</a>
+                                    <a class="topnav__link" data-i18n="nav.qrApplications"
+                                        href="./qr-applications.html">QR applications</a>
+                                    <a class="topnav__link" data-i18n="nav.staticVsDynamic"
+                                        href="./static-vs-dynamic-qr.html">Static vs dynamic QR</a>
+                                    <a class="topnav__link" data-i18n="nav.contact" href="./contact.html">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section class="menu">
+            <h1 class="h1" data-i18n="qrApplications.h1">QR applications</h1>
+            <p class="muted" data-i18n="qrApplications.subtitle">
                 Below are real-life examples of how QR codes are used every day.
             </p>
-</section>
-<section class="qrapps">
-<div aria-label="QR use cases" class="qrapps__grid">
-<a aria-label="Generate a Website QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.websites.aria" href="/?type=website#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-websites.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.websites.title">Websites</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.websites.desc">Send people to a page, menu, portfolio, store, or landing page in one
+        </section>
+        <section class="qrapps">
+            <div aria-label="QR use cases" class="qrapps__grid">
+                <a aria-label="Generate a Website QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.websites.aria" href="/?type=website#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-websites.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.websites.title">Websites</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.websites.desc">Send people to a page,
+                        menu, portfolio, store, or landing page in one
                         scan.</p>
-</a>
-<a aria-label="Generate a Business card QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.businessCards.aria" href="/?type=vcard#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-business-cards.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.businessCards.title">Business cards</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.businessCards.desc">Share contact details instantly using a vCard QR code.</p>
-</a>
-<a aria-label="Generate a Wi-Fi QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.wifi.aria" href="/?type=wifi#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-wifi.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.wifi.title">Wi-Fi access</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.wifi.desc">Let guests connect without typing a password.</p>
-</a>
-<a aria-label="Generate a Payment QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.payments.aria" href="/?type=website#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-payments.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.payments.title">Payments</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.payments.desc">Link to payment pages or payment instructions for quick checkout.</p>
-</a>
-<a aria-label="Generate a Restaurant menu QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.menus.aria" href="/?type=website#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-menu.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.menus.title">Restaurant menus</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.menus.desc">Share a menu link without printing new menus every time.</p>
-</a>
-<a aria-label="Generate an Event QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.events.aria" href="/?type=website#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-tickets.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.events.title">Events and tickets</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.events.desc">Speed up entry with QR tickets or share event details and schedules.</p>
-</a>
-<a aria-label="Generate a Poster QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.posters.aria" href="/?type=website#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-posters.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.posters.title">Posters and flyers</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.posters.desc">Turn print materials into interactive campaigns, sign-ups, or downloads.
+                </a>
+                <a aria-label="Generate a Business card QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.businessCards.aria" href="/?type=vcard#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-business-cards.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.businessCards.title">Business cards</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.businessCards.desc">Share contact details
+                        instantly using a vCard QR code.</p>
+                </a>
+                <a aria-label="Generate a Wi-Fi QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.wifi.aria" href="/?type=wifi#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-wifi.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.wifi.title">Wi-Fi access</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.wifi.desc">Let guests connect without
+                        typing a password.</p>
+                </a>
+                <a aria-label="Generate a Payment QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.payments.aria" href="/?type=website#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-payments.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.payments.title">Payments</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.payments.desc">Link to payment pages or
+                        payment instructions for quick checkout.</p>
+                </a>
+                <a aria-label="Generate a Restaurant menu QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.menus.aria" href="/?type=website#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-menu.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.menus.title">Restaurant menus</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.menus.desc">Share a menu link without
+                        printing new menus every time.</p>
+                </a>
+                <a aria-label="Generate an Event QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.events.aria" href="/?type=website#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-tickets.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.events.title">Events and tickets</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.events.desc">Speed up entry with QR
+                        tickets or share event details and schedules.</p>
+                </a>
+                <a aria-label="Generate a Poster QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.posters.aria" href="/?type=website#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-posters.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.posters.title">Posters and flyers</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.posters.desc">Turn print materials into
+                        interactive campaigns, sign-ups, or downloads.
                     </p>
-</a>
-<a aria-label="Generate a Packaging QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.packaging.aria" href="/?type=website#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-packaging.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.packaging.title">Product packaging</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.packaging.desc">Add instructions, warranty info, authenticity checks, or product pages.
+                </a>
+                <a aria-label="Generate a Packaging QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.packaging.aria" href="/?type=website#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-packaging.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.packaging.title">Product packaging</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.packaging.desc">Add instructions, warranty
+                        info, authenticity checks, or product pages.
                     </p>
-</a>
-<a aria-label="Generate a WhatsApp QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.whatsapp.aria" href="/?type=whatsapp#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-whatsapp.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.whatsapp.title">WhatsApp chat</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.whatsapp.desc">Start a conversation instantly with a prefilled phone number.</p>
-</a>
-<a aria-label="Generate a Phone call QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.phone.aria" href="/?type=phone#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-phone.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.phone.title">Phone calls</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.phone.desc">Make it easy to call support, reception, or a sales line.</p>
-</a>
-<a aria-label="Generate an Email QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.email.aria" href="/?type=email#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-email.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.email.title">Email links</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.email.desc">Let users send you an email with a preset subject and message.</p>
-</a>
-<a aria-label="Generate a Location QR code" class="qrappCard" data-i18n-attr="aria-label:qrApplications.card.location.aria" href="/?type=location#generator">
-<div aria-hidden="true" class="qrappCard__media">
-<img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-location.jpg"/>
-</div>
-<h2 class="qrappCard__title" data-i18n="qrApplications.card.location.title">Maps and locations</h2>
-<p class="qrappCard__desc" data-i18n="qrApplications.card.location.desc">Share an exact spot or a place name, useful for venues and meetups.</p>
-</a>
-</div>
-</section>
-</main>
-<!-- Buy me a coffee -->
-<section class="coffee">
-<div class="container coffee__inner">
-<div class="coffee__left">
-<span aria-hidden="true" class="coffee__icon">☕</span>
-<span class="coffee__text" data-i18n="coffee.text">
+                </a>
+                <a aria-label="Generate a WhatsApp QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.whatsapp.aria" href="/?type=whatsapp#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-whatsapp.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.whatsapp.title">WhatsApp chat</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.whatsapp.desc">Start a conversation
+                        instantly with a prefilled phone number.</p>
+                </a>
+                <a aria-label="Generate a Phone call QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.phone.aria" href="/?type=phone#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-phone.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.phone.title">Phone calls</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.phone.desc">Make it easy to call support,
+                        reception, or a sales line.</p>
+                </a>
+                <a aria-label="Generate an Email QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.email.aria" href="/?type=email#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-email.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.email.title">Email links</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.email.desc">Let users send you an email
+                        with a preset subject and message.</p>
+                </a>
+                <a aria-label="Generate a Location QR code" class="qrappCard"
+                    data-i18n-attr="aria-label:qrApplications.card.location.aria" href="/?type=location#generator">
+                    <div aria-hidden="true" class="qrappCard__media">
+                        <img alt="" class="qrappCard__img" loading="lazy" src="./assets/usecase-location.jpg" />
+                    </div>
+                    <h2 class="qrappCard__title" data-i18n="qrApplications.card.location.title">Maps and locations</h2>
+                    <p class="qrappCard__desc" data-i18n="qrApplications.card.location.desc">Share an exact spot or a
+                        place name, useful for venues and meetups.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- Buy me a coffee -->
+    <section class="coffee">
+        <div class="container coffee__inner">
+            <div class="coffee__left">
+                <span aria-hidden="true" class="coffee__icon">☕</span>
+                <span class="coffee__text" data-i18n="coffee.text">
                     If this tool helped you, consider buying me a coffee
                 </span>
-</div>
-<a class="coffee__btn" data-i18n="coffee.btn" href="https://buymeacoffee.com/webevangelist" rel="noopener" target="_blank">
+            </div>
+            <a class="coffee__btn" data-i18n="coffee.btn" href="https://buymeacoffee.com/webevangelist" rel="noopener"
+                target="_blank">
                 Buy Me a Coffee
             </a>
-</div>
-</section>
-<!-- Footer bar (full width like topbar) -->
-<footer class="footerbar" role="contentinfo">
-<div class="container footer">
-<div class="footer__inner">
-<div class="footer__left muted small" data-i18n="home.footer.made">
+        </div>
+    </section>
+    <!-- Footer bar (full width like topbar) -->
+    <footer class="footerbar" role="contentinfo">
+        <div class="container footer">
+            <div class="footer__inner">
+                <div class="footer__left muted small" data-i18n="home.footer.made">
                     © 2026 free-online-qr.com. Made with ❤️ in NL
                 </div>
-<div class="footer__right">
-<a class="footer__link" data-i18n="footer.privacy" href="./privacy.html">Privacy Statement</a>
-<a class="footer__link" data-i18n="footer.terms" href="./terms.html">Terms of Use</a>
-<a class="footer__link" data-i18n="footer.cookies" href="./cookies.html">Cookie Policy</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- Cookie consent banner -->
-<div class="cookiebackdrop" hidden="" id="cookiebackdrop"></div>
-<div class="cookiebar" hidden="" id="cookiebar">
-<div aria-label="Cookie consent" class="container cookiebar__inner" data-i18n-attr="aria-label:aria.cookieConsent" role="dialog">
-<div class="cookiebar__text">
-                We use cookies for analytics to understand site usage.
-                See the <a data-i18n="home.cookie.text.privacy" href="./privacy.html">Privacy Statement</a> and
-                <a data-i18n="home.cookie.text.cookies" href="./cookies.html">Cookie Policy</a>.
+                <div class="footer__right">
+                    <a class="footer__link" data-i18n="footer.privacy" href="./privacy.html">Privacy Statement</a>
+                    <a class="footer__link" data-i18n="footer.terms" href="./terms.html">Terms of Use</a>
+                    <a class="footer__link" data-i18n="footer.cookies" href="./cookies.html">Cookie Policy</a>
+                </div>
             </div>
-<div class="cookiebar__actions">
-<button class="btn btn--small btn--ghost" data-i18n="cookie.reject" id="cookieReject" type="button">Reject</button>
-<button class="btn btn--small" data-i18n="cookie.accept" id="cookieAccept" type="button">Accept</button>
-</div>
-</div>
-</div>
+        </div>
+    </footer>
+    <!-- Cookie consent banner -->
+    <div class="cookiebackdrop" hidden id="cookiebackdrop"></div>
+    <div class="cookiebar" hidden id="cookiebar">
+        <div class="container cookiebar__inner" role="dialog" data-i18n-attr="aria-label:aria.cookieConsent">
+            <div class="cookiebar__text">
+                <span data-i18n="cookie.text.a">
+                    We use cookies for analytics to understand site usage. See the
+                </span>
+                <a href="./privacy.html" data-i18n="home.cookie.text.privacy">Privacy Statement</a>
+                <span data-i18n="cookie.text.b">
+                    and
+                </span>
+                <a href="./cookies.html" data-i18n="home.cookie.text.cookies">Cookie Policy</a>
+                <span data-i18n="cookie.text.c">.</span>
+            </div>
+
+            <div class="cookiebar__actions">
+                <button class="btn btn--small btn--ghost" id="cookieReject" type="button" data-i18n="cookie.reject">
+                    Reject
+                </button>
+                <button class="btn btn--small" id="cookieAccept" type="button" data-i18n="cookie.accept">
+                    Accept
+                </button>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
